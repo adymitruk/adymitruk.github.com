@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Adventures in Agile]]></title>
+  <title><![CDATA[Adam Dymitruk]]></title>
   <link href="http://adymitruk.github.com/atom.xml" rel="self"/>
   <link href="http://adymitruk.github.com/"/>
-  <updated>2012-01-25T21:50:04-08:00</updated>
+  <updated>2012-01-25T21:57:11-08:00</updated>
   <id>http://adymitruk.github.com/</id>
   <author>
     <name><![CDATA[Adam Dymitruk copyright 2012]]></name>
