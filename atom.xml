@@ -4,7 +4,7 @@
   <title><![CDATA[Adam Dymitruk]]></title>
   <link href="http://adymitruk.github.com/atom.xml" rel="self"/>
   <link href="http://adymitruk.github.com/"/>
-  <updated>2012-01-27T12:12:42-08:00</updated>
+  <updated>2012-01-27T13:35:21-08:00</updated>
   <id>http://adymitruk.github.com/</id>
   <author>
     <name><![CDATA[Adam Dymitruk copyright 2012]]></name>
@@ -18,7 +18,9 @@
     <link href="http://adymitruk.github.com/blog/2012/01/25/a-fresh-start-octopress-provides-the-tooling-for-blogging/"/>
     <updated>2012-01-25T22:03:00-08:00</updated>
     <id>http://adymitruk.github.com/blog/2012/01/25/a-fresh-start-octopress-provides-the-tooling-for-blogging</id>
-    <content type="html"><![CDATA[<p>This is the first post using Octopress. So far it&#8217;s awesome. I&#8217;ll have more to show soon. Look for:</p>
+    <content type="html"><![CDATA[<p><img src="https://sites.google.com/a/dymitruk.com/storage/_/rsrc/1327697565349/home/cat-face.jpg" alt="Alt If you don't like my changes, I can change your face for you" /></p>
+
+<p>This is the first post using Octopress. So far it&#8217;s awesome. I&#8217;ll have more to show soon. Look for:</p>
 
 <ul>
 <li>Import old posts from adventuresinagile.blogspot.com</li>
