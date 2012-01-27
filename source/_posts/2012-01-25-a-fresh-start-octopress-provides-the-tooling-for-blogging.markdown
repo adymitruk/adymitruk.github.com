@@ -6,6 +6,7 @@ comments: true
 categories: 
 ---
 This is the first post using Octopress. So far it's awesome. I'll have more to show soon. Look for:
+
 1. Make dymitruk.com point here
 2. Import old posts from adventuresinagile.blogspot.com
 3. Customize the front page to include my password hasher
