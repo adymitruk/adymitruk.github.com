@@ -4,7 +4,7 @@
   <title><![CDATA[Adam Dymitruk]]></title>
   <link href="http://adymitruk.github.com/atom.xml" rel="self"/>
   <link href="http://adymitruk.github.com/"/>
-  <updated>2012-01-26T17:50:36-08:00</updated>
+  <updated>2012-01-26T17:53:59-08:00</updated>
   <id>http://adymitruk.github.com/</id>
   <author>
     <name><![CDATA[Adam Dymitruk copyright 2012]]></name>
@@ -20,12 +20,12 @@
     <id>http://adymitruk.github.com/blog/2012/01/25/a-fresh-start-octopress-provides-the-tooling-for-blogging</id>
     <content type="html"><![CDATA[<p>This is the first post using Octopress. So far it&#8217;s awesome. I&#8217;ll have more to show soon. Look for:</p>
 
-<ol>
+<ul>
 <li>Make dymitruk.com point here</li>
 <li>Import old posts from adventuresinagile.blogspot.com</li>
 <li>Customize the front page to include my password hasher</li>
 <li>Add Articles and other demo stuff</li>
-</ol>
+</ul>
 
 ]]></content>
   </entry>
