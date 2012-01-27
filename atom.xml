@@ -4,7 +4,7 @@
   <title><![CDATA[Adam Dymitruk]]></title>
   <link href="http://adymitruk.github.com/atom.xml" rel="self"/>
   <link href="http://adymitruk.github.com/"/>
-  <updated>2012-01-27T12:03:57-08:00</updated>
+  <updated>2012-01-27T12:10:17-08:00</updated>
   <id>http://adymitruk.github.com/</id>
   <author>
     <name><![CDATA[Adam Dymitruk copyright 2012]]></name>
@@ -22,7 +22,7 @@
 
 <ul>
 <li>Import old posts from adventuresinagile.blogspot.com</li>
-<li><del>Customize the front page to include my password hasher.</del> My password generator is <a href="http://adymitruk.github.com/password.html">here</a>. I&#8217;ll clean up that page later.</li>
+<li><del>Customize the front page to include my password hasher.</del> My password generator is <a href="http://adymitruk.github.com/password.html">here</a>.</li>
 <li>Add Articles and other demo stuff</li>
 </ul>
 
