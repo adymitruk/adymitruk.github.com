@@ -5,7 +5,7 @@ date: 2012-01-25 22:03
 comments: true
 categories: 
 ---
-This should be a cat: <img src="/images/cat-edit.jpeg" />
+This should be a cat: <img src="/images/cat-edit.jpg" />
 
 This is the first post using Octopress. So far it's awesome. I'll have more to show soon. Look for:
 
