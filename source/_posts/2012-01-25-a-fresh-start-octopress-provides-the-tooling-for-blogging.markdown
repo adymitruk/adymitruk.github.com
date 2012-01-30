@@ -5,7 +5,7 @@ date: 2012-01-25 22:03
 comments: true
 categories: 
 ---
-![Alt If you don't like my changes, I can edit your face](/images/cat-edit.jpg)
+{% img /images/cat-edit.jpg %}
 
 This is the first post using Octopress. So far it's awesome. I'll have more to show soon. Look for:
 
