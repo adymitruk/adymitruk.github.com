@@ -1,0 +1,583 @@
+---
+layout: page
+title: "Old Comments About Branch per Feature"
+date: 2012-02-04 22:29
+comments: false
+sharing: true
+footer: true
+---
+<h2>From my Google+ account, these are the comments about my Branch-per-Feature post:</h2>
+
+<p>mike suarez  -  what r your thoughts on parallel development instead of branch? i usually avoid branches by being able to commit small steps without breaking functionality while adding new features</p>
+<p>14 Jul 2011</p>
+
+<p>Adam Dymitruk  -  You're in trouble if one feature is a no-go. Not easy to undo.</p>
+<p>14 Jul 2011</p>
+
+<p>mike suarez  -  humm cool ... i haven't run into that but yep it would be more painful than with a branch</p>
+<p>14 Jul 2011</p>
+
+<p>Adam Dymitruk  -  The issue is that teams feel pressured to fix the maligned feature so that the release can go ahead as planned, too afraid to put together an alternate build. So even though it's Friday, they managed to get the issue fixed. Was this done with the same quality as the rest of the work that week? Probably not.</p>
+
+<p>Exercising the omission of a feature takes this fear away. You have the confidence to release any combination of features at the drop of a hat.</p>
+
+<p>You should be running into this more often. Instead, most are left with no choices and won't rebuild with the problem feature missing.</p>
+<p>14 Jul 2011</p>
+
+<p>Ryan Cromwell  -  I would disagree slightly with "no back-merges". Back merges which are necessary to move your feature forward can be a smell, but doing a they are certainly not inherently evil.</p>
+
+<p>The feature branch should be small, but you should still be refactoring and executing test suites in the context of the whole app with changes you will be soon integrating with before pushing to integration. If you do not execute your full test suite and refactor with those features integrated since your branch was conceived before pushing, you chance undone work in the integration branch. CI on the integration branch is a safety net, not a cure.</p>
+<p>15 Jul 2011</p>
+
+<p>Martin Fowler  -  This is an interesting workflow - thanks for posting, as I couldn't figure out your point of view from your tweets.</p>
+
+<p>However I think it's important to realize that this workflow is very different from what most of the industry refers to as Feature Branching (and it is that style that +Mike Mason and I were talking about). I think that this workflow deserves its own name to distinguish itself from these other approaches.</p>
+<p>15 Jul 2011</p>
+
+<p>Adam Dymitruk  -  Ryan Cromwell, the back merge is an issue because it will make it impossible to do a new build with a feature that its not ready, excluded.</p>
+<p>15 Jul 2011</p>
+
+<p>Adam Dymitruk  -  Martin, the name carries with it so much. I should have noted that you refer to it as "feature branching" while I've been coming across the term "branch-per-feature". Same thing really.</p>
+
+<p>Would you not agree that branch per feature could have and has evolved as the tools have improved? Or is it better to have a new name?</p>
+
+<p>For me it's the former as a preference because it's the action of keeping work organized in a particular branch instead of immediately tangling it with other concerns that may not be fully baked yet. This is what I still feel is branch per feature. It's just executed better.</p>
+<p>3 Aug 2011 (edited)</p>
+
+<p>Martin Fowler  -  The problem is that when you say "Feature Branching" or "Branch by Feature" (I agree they are synonyms) what most people will understand is traditional feature branching. This makes it harder for you to communicate your ideas because you have to explain that what you are talking about isn't what they are thinking about, but something else. Trying to redefine an already established term is a huge effort (which is why companies worry so much about branding).</p>
+
+<p>The same problem occurs the other way. You assumed Mike and I were talking about what you were doing - while we were addressing a different technique. But if two radically different techniques share the same name, how do we tell them apart? We humans may have evolved from Apes, but it's useful to call us Humans and not Apes.</p>
+<p>15 Jul 2011 (edited)</p>
+
+<p>Chris Nicola  -  +Martin Fowler Not sure how apt your use of that evolution analogy is. Evolution isn't one big step, at some point today's "humans" evolved from yesterday's "humans" and we don't call them apes. Things typically evolve and improve without immediately earning themselves a whole new nomenclature.</p>
+
+<p>BPF or "feature branching" has simple been improved by applying modern DVCS systems as well as agile techniques like ensuring smaller shorter lived features. I think you'll find that people have simply built a better mousetrap here.</p>
+<p>15 Jul 2011</p>
+
+<p>Adam Dymitruk  -  It's my misunderstanding then to what level branch per feature was defined. I simply saw it as organizing your work into features rather than committing on trunk directly. Doing this could be executed well or badly. If you think it deserves it's own name, I'm all ears :)</p>
+<p>15 Jul 2011</p>
+
+<p>Martin Fowler  -  Certainly both your workflow and traditional FB share the notion of having clear branches for a single feature. Where yours seems to differ is: 1) keeping the features small, 2) having a throw-away integration branch that you do merges on, 3) not merging from other features into a feature branch. It's not so much about the branch as how it interacts with other branches which is different about this approach.</p>
+<p>15 Jul 2011 (edited)</p>
+
+<p>Adam Dymitruk  -  Right. I just saw that as "executing branch-per-feature better".</p>
+<p>15 Jul 2011</p>
+
+<p>Martin Fowler  -  True, but I think the net result is something significantly different. Calling the same thing will thus lead (and is already leading) to confusion. In the end it's up to you, but I think you're just causing yourself a lot of problems.</p>
+<p>15 Jul 2011</p>
+
+<p>Michael Feathers  -  It seems like there's a weird tension with this practice. We want our code to be separable by feature, but we know that code for features often isn't that orthogonal. The thing that bothers me is that too often I see people avoiding refactoring when they think too much about separability.</p>
+<p>15 Jul 2011 (edited)</p>
+
+<p>Adam Dymitruk  -  I have the same feeling. I believe this can be addressed by ensuring the right size of team is working on a project. A new project should have a few people so it's easy to relentlessly refactor. And there perhaps you do the back merges and you do away with the flexibility of "rebuilding with a feature omission".</p>
+
+<p>Later, you want more people and the work should gel better as there are different areas and changes can only go so far. Mega refactorings perhaps deserve the team's attention. Whether this is adopted or not, a lot of rework will be done when making a massive change. One could refactor on a successful release with a more directed effort to improve design. We should see the strengths and weaknesses of TDD in different scenarios.</p>
+
+<p>At least this gives you an organization of effort to more plainly see how the work unfolded and to make better use of that work.</p>
+
+<p>It's been working wonders here. There are some caveats that I have to address where we modify the process. One is maintenance and hotfixes and another is the start of a new project.</p>
+
+<p>Taking advantage of newer, sharper tools has been an advantage though.</p>
+<p>15 Jul 2011</p>
+
+<p>Mike Hook  -  We have been following this practice since migrating to git and it generally works really well for us. However there are a couple of issues we sometimes encounter:</p>
+
+<p>- Merging all the features for release at the end of the sprint becomes quite an admin overhead, and resolving conflicts can tricky as one person generally ends up merging everyone's features.</p>
+
+<p>- Some features end up missing the release then you need to maintain them on separate branches, being careful to pull in the latest changes from whatever has been released. On a big project this can result in a lot of branches which are hard to keep track of.</p>
+
+<p>Regarding re-factoring, I don't think it needs to be avoided generally. As long as you're aware of what features other devs are working on, it should be fairly easy to spot if you will be changing the same code as them, and defer that change until after the merge.</p>
+<p>15 Jul 2011</p>
+
+<p>Martin Fowler  -  @Mike. that sounds to me as if it has a big difference to the workflow that Adam described. I read your comment as saying that you don't merge all the features together until the end of the sprint, but I understood Adam as saying that he merges all features together on an integration branch to flush out conflicts. Am I understanding that correctly?</p>
+<p>15 Jul 2011</p>
+
+<p>Mike Hook  -  ah yes, we have been running it a bit differently on 2 different projects to try and come up with the best workflow.</p>
+
+<p>The first is as I described above, whereas on the second we do merge each feature into the release candidate branch as we go along. However we also see problems here if we get to the end of the sprint and one of the features in the RC branch still needs amending.</p>
+
+<p>It sounds like Adam is effectively combining these two methods, integrating continuously but also building an RC branch at the end of the sprint. The part I think we will need to investigate is how to retain the knowledge from the CI merges so that building the RC branch at the end is straight forward.</p>
+<p>15 Jul 2011</p>
+
+<p>Adam Dymitruk  -  Mike, read the post again with a magnifying glass. There are some gems in there :) rerere sharing is your key.</p>
+<p>15 Jul 2011</p>
+
+<p>Mike Hook  -  Cheers, I could of done with that magnifying glass reading it on my phone!</p>
+<p>rerere sounds like just the ticket, is there nothing git can't do? ;)</p>
+<p>15 Jul 2011</p>
+
+<p>Ryan Cromwell  -  The back merge isn't the problem. Leaving that merge commit in the history is the problem. The back merge allows that feature team to verify all changes they are going to inflict on the integration branch before integrating. Dump the commit with a hard reset, keep the rerere history. This makes the integration branch more stable and will scale the flow more.</p>
+<p>15 Jul 2011</p>
+
+<p>Adam Dymitruk  -  yes. but then it doesn't matter if you do this on the integration branch or the feature branch as you're using a dvcs.</p>
+
+<p>If I accidentally leave a bad merge, I'd rather it be on the integration branch and thereby ensuring the feature is as clean as possible.</p>
+<p>15 Jul 2011 (edited)</p>
+
+<p>Ryan Cromwell  -  good point, you don't have to push. would make me nervous. I would screw up and push.</p>
+<p>15 Jul 2011</p>
+
+<p>Martin Fowler  -  +Adam Dymitruk What happens if the build on the integration branch fails?</p>
+<p>15 Jul 2011</p>
+
+<p>Adam Dymitruk  -  You have a problem :) It hasn't happened to us yet. So I would be lying if I said I have a correct or best answer for you.</p>
+
+<p>I'll take a stab at it and encourage others to chime in with their ideas.</p>
+
+<p>This obviously exposes the incompatibility of 2 or more features not being able to coexist without some extra work. You will have to make a new integration branch and start to integrate with the last feature that failed on the original integration branch.</p>
+
+<p>2 things will probably come out of this. Either the branch is incompatible with the rest of the branches or it's incompatible with another single feature.</p>
+
+<p>If it's the latter, you simply integrate the 2 features since they are codependent and add a commit that solves the issue. Both branches should be pointing at that commit now.</p>
+
+<p>If it's the former, you regress to building from the integration branch where you have commits that address the incompatibility.</p>
+
+<p>The core work for all features is still isolated in history in case you need to do anything else. The organization is still a win.</p>
+
+<p>It comes down to how well the solution is adhering to the Open Closed Principle and Separation of Concerns and probably other important design/coding principles.</p>
+
+<p>I hope I can give you a real world example when it happens to me or the team I'm on.</p>
+
+<p>-- UPDATE --</p>
+
+<p>I just found out from a colleague that we indeed had that issue once. All it did was point out that the feature that was just integrated had a bug in it's unit tests. Reversing out that last merge, checking out the feature, adding a commit to fix the issue and merging again fixed it.</p>
+
+<p>One caveat is that we had a rerere conflict resolution that was stored and had to be "forgotten" using "git rerere forget filespec". All was good from then on.</p>
+
+<p>So I do have 1 real world example :)</p>
+<p>15 Jul 2011 (edited)</p>
+
+<p>Jez Humble  -  I've put up my thoughts on DVCS, continuous integration and branch by abstraction here: http://bit.ly/qH9P1p</p>
+
+<p>Two thoughts I'd particularly like to emphasize:</p>
+
+<p>* Inasmuch as this is different from what the rest of the world calls branch-by-feature, you would do well to call it something else, otherwise confusion will reign. Consider: how can we tell people to avoid the old pattern? "Yes, the old branch by feature was bad! But this new one - which requires several pages of detailed explanation but is subtly different - is good". At best, that's very poor communication. At worst, it's willful obfuscation.</p>
+
+<p>* I'm still not really sure what you're proposing, and I think some diagrams would help. However my main objection to not continuously merging into the line of development you will release off (which I refer to as "mainline") is this: most of the pain of getting non-trivial software delivered comes after your feature is dev complete. So anything which keeps your code away from mainline is bad news. In particular, there's no point doing testing on un-integrated code (when I say "integrated" I mean "integrated with mainline") - it's just waste because you have to do it again once it's integrated. I also find it weird that you would optimize for the exceptional situation when something has to be taken out when it makes the normal case - keeping everything in - harder.</p>
+<p>15 Jul 2011</p>
+
+<p>Jez Humble  -  OMG, I just checked out what rerere does. Sorry, but you're saying feature toggles are a hack and rerere isn't? Just read the description: "In a workflow employing relatively long lived topic branches, the developer sometimes needs to resolve the same conflicts over and over again until the topic branches are done" Aaargh! Don't use long lived topic branches then!</p>
+
+<p>This just goes to show that one person's "hack" is another person's "useful tool".</p>
+<p>15 Jul 2011</p>
+
+<p>Adam Dymitruk  -  Jez, there are no long lived branches in what I presented. Did you understand the post?</p>
+<p>15 Jul 2011</p>
+
+<p>Adam Dymitruk  -  Rerere is just being able to store how you resolved a conflict. You do this anyway when you do an ordinary merge. What's the problem with reusing that work if you want to do another merge after a reset?</p>
+
+<p>Toggles are hacks because it is extra code that compensates for a process that cannot keep incomplete features from production. Extra code is just room for more bugs. It's like compensating controls. You shouldn't use them if you don't have to. We don't have to.</p>
+
+<p>I don't think this needs a new name. It is branch-per-feature. I chewed on that for a long time now. It's a much better way to do branch-per-feature than what was possible with old tools. I doubt confusion will reign unless people of influence decide to insist on the old method of long lived branches and not integrating often as defining what it means to organize stories.</p>
+
+<p>I'm not sure how you missed it, but we do merge often to what effectively is the main line branch. We use master to mark what is released. This takes little extra time as the merges are fast in git.</p>
+
+<p>Are you familiar with "git flow"?</p>
+<p>15 Jul 2011</p>
+
+<p>Adam Dymitruk  -  As I mention, there are a number of other pieces I haven't had time to add. I'll add to them in the coming days.</p>
+<p>16 Jul 2011</p>
+
+<p>Martin Fowler  -  +Adam Dymitruk another question from me. What happens as you move to release? The git flow paper talks about creating a release branch and merging those features selected for the release onto that branch. Is that what you do too? How long is it between putting these features onto the release branch and putting the release into production? What kind of activity happens on the release branch?</p>
+<p>16 Jul 2011</p>
+
+<p>Martin Fowler  -  +Adam Dymitruk said "I doubt confusion will reign unless people of influence decide to insist on the old method of long lived branches and not integrating often as defining what it means to organize stories."</p>
+
+<p>Just to make my position quite clear. I completely disagree with you on this point, but I accept we are in disagreement and will try not to belabor the point. I will continue to use the terms "feature branching" and "branch per feature" to describe the same concepts those terms have described for many years. While this industry is full of inconsistent terminology, I do strive to be consistent with myself <http://martinfowler.com/bliki/Neologism.html>. This is not meant as a attempt to undermine your point of view, I think you are shooting yourself in the foot here (but it's your gun and your foot). I am always happy to explain interesting new techniques to a wider audience even if I don't like them myself (eg Mocks Aren't Stubs). At this point I am still trying to understand how your workflow works - and if it's ok with you - will continue to ask questions here about it.</p>
+<p>16 Jul 2011 (edited)</p>
+
+<p>Jez Humble  -  Hi Adam</p>
+
+<p>I think I understood your post, although some diagrams would help. But my comment about rerere is not addressed at the process you describe - I was just amused by the motivation in the rerere documentation.</p>
+
+<p>On the naming front, the problem is many of us have to deal quite frequently with the many, many people who use old-style feature branching. Before, it was quite clear what we meant by "feature branching" and we could easily explain the problems with it. Now you want to use it to mean two different things, we have to try and disambiguate, which is going to make our lives - and changing people's minds in favour of git - much more difficult. I think I am personally going to refer to your approach as either "feature topics" or "feature flow" to distinguish between them. Otherwise I'll find myself in the position of the makers of Thalidomide after they fixed it to prevent it from causing birth defects: "this new Thalidomide is perfectly safe and totally different from the old one".</p>
+
+<p>On your "toggles are hacks" comments, consider this rephrasing: "Feature branches are hacks because it is extra process that compensates for a development style that cannot keep incomplete features from production". You have to take the pain somewhere. The question is where.</p>
+
+<p>The reason I don't like feature branches - either kind - is because it optimizes for developers to continue work without considering the effect their code will have on the working, integrated system, and the work what other people are doing at the same moment you are. That pain gets put off until later. In my opinion - and that of the devops movement - production stability needs to be prioritized over velocity of development. There's no point in developing features really fast if you then need to do extra work later to integrate everybody's changes. It's a local optimization that you have to pay back later.</p>
+<p>16 Jul 2011    +3</p>
+
+<p>Adam Dymitruk  -  Jez, thanks for the suggestion. Maybe that will be a good name. Maybe "proactive branch-per-feature". I still see it as a particular way if doing branch-per-feature. But that's not going to be resolved here.</p>
+
+<p>We integrate all the time on the integration branch. Release candidates get integrated on the qa branch just as frequently. This is a branch that gets tagged and reset all the time.</p>
+
+<p>Everything is done in the spirit of CI. Dealing with branches is a lot easier with dvcs. So we leverage that. Nothing is "put off till later". But we make a distinction with what work is complete and branch manipulation allows us more flexibility. It replaces having toggles and hence partially implemented feature code and toggle code. Again, that's a lot of code going into production that gives no value to the end user and is the source of potential bugs.</p>
+
+<p>Further, in this</p>
+<p>16 Jul 2011</p>
+
+<p>Adam Dymitruk  -  Nice Thalidomide reference, btw :) To flip this, Chris Nicola likened this to building a car. If we were unsuccessful at first and they were dangerous to use, why name a successful car something else?</p>
+
+<p>Martin, your mock example sport of brings up "unhealthy mocking". At the start, in .net, we only had mocks where you had to specify methods as a string. Later with use of reflection Oren Eini made Rhino Mocks which took away the friction and Renames in Resharper would work across the board. We didn't call mocks something else after that point. But they were more likely to be considered an anti pattern before.</p>
+<p>16 Jul 2011</p>
+
+<p>Adam Dymitruk  -  Martin, I'm going to carve out some time to document this work flow in better detail. I appreciate the analysis that it's going through.</p>
+<p>16 Jul 2011</p>
+
+<p>Martin "Aatmaa" Suchanek  -  "very poor communication"? "willful obfuscation"? "you are shooting yourself in the foot here (but it's your gun and your foot)"?</p>
+
+<p>That's quite some strong language there guys.</p>
+
+<p>As far as I see it, all we are trying to do here, collectively, is discuss some optimizations in an already known process. If it needs a new name, fine, but is that really the main topic of the matter?</p>
+<p>16 Jul 2011</p>
+
+<p>Martin "Aatmaa" Suchanek  -  +Jez Humble: "The reason I don't like feature branches - either kind - is because it optimizes for developers to continue work without considering the effect their code will have on the working, integrated system, and the work what other people are doing at the same moment you are."</p>
+
+<p>How so?</p>
+
+<p>A feature branch is integrated (merged onto) an integration branch as frequently as is necessary. (See Adam's "Integrate relentlessly" section).</p>
+
+
+<p>+Jex Hunble: "production stability needs to be prioritized over velocity of development"</p>
+
+<p>Production stability (quality) is the direct consequence of development quality. Development quality is the direct consequence of the tools and methods employed in that process.</p>
+
+<p>The tools (DVCS, git, rerere) and process (improved BPF) being discussed here are targeted optimizations that have proved, in our experience, to reduce complexity and effort, and increase velocity of pushing out features.</p>
+
+<p>By reasoning about features as discrete components (see "Features are small") that are isolated from other features (see "don't do back-merges"), we have seen a drastic reduction in complexity. When integrating, feedback is continuous (see "Integrate relentlessly"), and merge work is shared across the team (see "share your hard work"). Features are easily pulled (because they are discrete, and do not depend on any other work in progress), and they are easily combined into a release candidate (via the release/QA branch). Features are extremely simple (OCP), and align directly to a sprint's user stories and work items.</p>
+
+<p>An interesting offshot of the process has been that you can look at our kanban board and our branch structure for the sprint, and see almost the exact same information.@jammycakes has called this "agile feature branching". I would agree. This process has certainly facilitated our agile/lean methodology.</p>
+<p>16 Jul 2011</p>
+
+<p>Adam Dymitruk  -  This process has actually improved design. It seems OCP and SoC are naturally encouraged to fulfill atomic feature branches. Source control is something that one had to battle years ago. Now it seems to be helping us do our coding and drive some aspects of design.</p>
+<p>16 Jul 2011</p>
+
+<p>David Gadd  -  In this approach, all of the following are givens:</p>
+<p>1) releases occur on a regular basis, and development is oriented to the release schedule</p>
+<p>2) releases coincide with merge to master</p>
+<p>3) the release is tagged, and an empty commit immediately following the release commit is also tagged (as the start of the new cycle)</p>
+<p>4) the existing integration ("dev") branch and the qa branch from last cycle are now re-pointed to the new start-of-cycle tag</p>
+
+<p>Key point here: master is ONLY updated once per release, at the point of release--but the integration/dev and qa branches originate from (and are therefore identical to) master</p>
+
+<p>The process now begins, which adheres to a "Total Integration Total Isolation" principle:</p>
+<p>1) Each developer chooses a ticket and creates a branch with that number (eg. In JIRA, tickets ABC-141, ABC-142, ABC-143, ABC-144)</p>
+<p>2) This branch will be short lived (it won't live past the release of the ticket) although the actual commits will be preserved.</p>
+<p>3) The developer commits frequently their branch (eg. ABC-143).</p>
+<p>4) However, as per some of the heated discussion in this thread, the developer also merges every few hours with the integration/dev branch and checks for conflicts, compile fails, and runs all tests either locally or via the CI server's integraton/dev branch build.</p>
+<p>5) Merge conflicts are resolved (and cached for future reuse if the DVCS permits), but outright failures requires the dev to go back to their feature branch and make the fix there, before re-attempting the merge to integration/dev branch.</p>
+<p>6) Note that the feature branches never merge FROM the integration branch, because this would violate the isolation side of the Total Integration Total Isolation principle.</p>
+<p>7) What about major refactorings or new archicture/scaffolding that one or more features need to share? In that case, a new ticket (eg. Dev task ABC-145) is created to hold that shared work and a branch is created (again, off of the start-of-cycle tag) to hold that major refactoring or scaffolding. The features requiring this branch change their start point/dependency from the start-of-cycle tag to this refactoring/scaffolding branch and they will retain this dependency until the end of the release.</p>
+<p>8) Going forward, each new work is commited only to the feature branch, and each feature branch is regularly merged to integration/dev. This results in the Total Integration Total Isolation goal</p>
+<p>9) Since every branch now originates from start-of-cycle (or from a shared refactoring/scaffolding branch that originated from start-of-cycle), QA can now safely pick and choose which features to merge onto the qa branch, and ultimately, which to release and merge to master.</p>
+<p>10) Any features that were not released can be discarded (if rejected entirely) or rebased onto the next start-of-cycle tag (if to be resumed).</p>
+<p>17 Jul 2011 (edited)</p>
+
+<p>Scott Muc  -  Thanks for adding the clarity Adam! I knew we were discussing different thinks.</p>
+
+<p>A few visuals I would love to see:</p>
+<p>1. Your CI implementation</p>
+<p>2. Developer workflow (not just changing code but response to CI events)</p>
+<p>3. Sprint workflow - there seems to be some related activities in sprint and branch planning</p>
+
+<p>Also, I would like to know the largest team you implemented this workflow on. Does it scale? How quickly was this workflow adopted? Would you feel comfortable with the average or below average skilled team be able to use this strategy?</p>
+
+<p>Next time I'm in Van we should sit down and grow through the steps.</p>
+<p>17 Jul 2011</p>
+
+<p>Adam Dymitruk  -  For sure, Scott. I've had no success doing this in SVN. In git it's been easy.</p>
+<p>17 Jul 2011</p>
+
+<p>Jez Humble  -  Hey David</p>
+
+<p>Thanks for the clarification - that helps a great deal.</p>
+
+<p>I have one question - what's the point of having separate integration, qa, and release branches? Why not just just release the binaries that are created from the integration branch?</p>
+
+<p>@Martin- yes, it's strong language, and I stand by it, because in many years of consulting I and my colleagues have seen so many organizations use "feature branching" to describe a process that completely destroyed their ability to regularly and reliably release high quality software.</p>
+<p>18 Jul 2011</p>
+
+<p>David Gadd  -  Hi Jez,</p>
+
+<p>Each branch is intended for a different purpose:</p>
+<p>1) The integration branch is for ongoing dev commits throughout the release. This branch is used to verify compiles, automated test passing, resolving merge issues, and so on.</p>
+<p>2) The qa branch is for verifying which features to release. Given 8 features, qa may conclude after testing on the qa branch that 2 of those features aren't ready for release. They reset the qa branch back to start, and instead of merging in all 8 features, now they merge in 6. More testing, and they conclude that one more feature isn't ready, so they once again reset qa back to start, and now merge 5 features. (And perhaps the dev fixes feature 7, and so the project lead decides to get qa to merge back in feature 7. When qa is completely satisfied the set of features is ready for release;</p>
+<p>3) The master/release branch makes a single merge, to this final version of the qa branch. Master is now set in stone, until the end of the next release cycle.</p>
+<p>4) Meantime, the integration(dev) and qa branches get reset to the starting tag of the next release, and the cycle described above repeats.</p>
+<p>18 Jul 2011</p>
+
+<p>Jez Humble  -  Thanks again David, that's very helpful.</p>
+
+<p>I think I've identified why I have a niggling doubt with this process. It's only when "qa is completely satisfied the set of features is ready for release" and the qa branch is finalized that the system can truly be said to be integrated, and it's only at this point that you can really validate that there are no regressions, and that the application as a whole delivers the expected value.</p>
+
+
+<p>Yes, relentless integration onto the integration branch helps, and The Total Isolation Principle should ensure that there is no interaction between features - but you can't actually validate your hypothesis that your features are isolated until you have fully integrated all features for the release.</p>
+<p>I have seen teams do this, and find that there are performance or stability problems due to unexpected interactions between stories. Furthermore, there will be re-work as you have to run your deployment pipeline process against the QA branch and the integration branch, and you can't create release candidate binaries from your integration branch.</p>
+
+<p>If you wanted to move to continuous deployment, you could pull features into the QA branch as soon as they're "done" and trigger your deployment pipeline off this. I think that would probably streamline the process somewhat, as you'd avoid having a QA "phase" at the end of the release so you can get the system as a whole from done to done done. Then your release branch is effectively just a tag on the version on your QA branch that you released. Just by removing the distinction between the QA and release branch - basically treating the release branch as a tag on the QA branch - you'd end up with something similar to the process that Facebook describes in their video: http://techcrunch.com/2011/05/30/facebook-source-code/</p>
+
+<p>But in the grand scheme of things, these aren't significant objections. This process sounds like an enormous improvement over traditional feature branching, and based on my understanding right now I think it is entirely compatible with what I describe in continuous delivery, provided your stories are small enough - one or two day's work.</p>
+
+<p>My only issue with it is that it sounds like a reasonable amount of overhead in terms of version control process and build complexity compared with the process I describe in my blog post (note - no feature toggles required) where the deployment pipeline comes straight off the CI branch. If your stories are sufficiently small, I just don't see that any real benefit is gained from this overhead.</p>
+<p>19 Jul 2011</p>
+
+<p>Adam Dymitruk  -  Don't knock it till you try it :) The advantages to organizing your work and not publishing stuff that's not ready is worth it. The overhead you speak of is heavily over stated - it's not what we're experiencing. Remember how branches are really light in git?</p>
+
+<p>The QA branch exercises, early, the practice of being able to arbitrarily put together a build. In essence it's no different than our development integration branch. This is all just convention. It gives us a "release" build instead of "debug" in TeamCity. Artifacts from there are ready to ship if they pass the mustard - they include StoryTeller output (#winning!). On the integration branch, we may want to debug to investigate any issues.</p>
+
+<p>Not to beat a dead horse, but the biggest issue for me is the extra code that delivers nothing to the customer is a HUGE risk - if we're overstating things, I'll pick this one. You not only have toggles but also half finished features in production. I liken it to "Continuous Delivery of Crap" - maybe I was doing it wrong? In my books, that's a huge fail. I just can't stand by idly and nod my head to half baked stuff rummaging around in production.</p>
+
+<p>Have you used git flow?</p>
+<p>19 Jul 2011 (edited)</p>
+
+<p>Martin Fowler  -  I'm getting a bit more confused again. Earlier on I asked what happens if there's a failure on the integration branch. You responded that it had (almost) never happened. But in later posts David and you have indicated that there are failures on the integration branch that cause devs to fix things on their feature branches. So could you clarify this for me? Do you get failures on your integration branch, if so what do people do when a failure occurs?</p>
+
+<p>I had another question pending about what happens on release branch, which from later comments I'm assuming you call the QA branch. Those comments have answered some of those questions but I'd like to know how long a time passes between putting the candidate features onto the QA branch and those features going into production.</p>
+
+<p>The discussion above implies that QA work is done on the QA branch and that developers write tests as part of their work on the feature branch as they are developing it. Is that the case?</p>
+<p>19 Jul 2011</p>
+
+<p>Adam Dymitruk  -  The test writing happens on the feature branch itself. The QA branch is used to make artifacts to run the tests against on QA servers.</p>
+<p>19 Jul 2011</p>
+
+<p>Jez Humble  -  Adam - don't knock it till you try it. Nobody should be writing extra code that delivers nothing to the customer. If you're keeping your features small, there just isn't an issue of "half finished features in production", and you don't even need feature toggles. I get the feeling you haven't read my blog post, or - more broadly - tried to give the method I'm describing the benefit of the doubt, as I am trying to do here.</p>
+
+<p>I am really curious to understand why you need separate QA and release branches, and whether you think it would be a big deal just to treat the release branch as a tag of good versions of the QA branch.</p>
+<p>22 Jul 2011 (edited)</p>
+
+<p>Jez Humble  -  Also - no, I haven't used git flow, although I have used git and know my way around it pretty well.</p>
+<p>19 Jul 2011</p>
+
+<p>Adam Dymitruk  -  The need for a separate qa branch arises from the fact that the integration branch will most likely never have the exact commits that you need at any point. It will have commits for work that has just begun on other features. It is effectively trunk-based type of state. The qa branch just picks the finished features and merges just them.</p>
+<p>19 Jul 2011</p>
+
+<p>David Gadd  -  Hi Jez,</p>
+
+<p>My main goal in contributing to this thread was to explain how we are currently implementing this approach at this time and some of the benefits that we've been seeing, particularly around decoupling of features. But at this point I think I should wait, and continue our approach for a few months longer to see what strengths and weaknesses shake out so that I can speak with more experience about the pros and cons. Thanks for your feedback.</p>
+<p>19 Jul 2011</p>
+
+<p>Adam Dymitruk  -  Btw, I have read your posts. This was just a post to counter the statement that "branch per feature is evil". This is my idea of branch per feature and just presented it here to show how proper use of branches allows you to work in a better way than trunk based development with feature toggles.</p>
+<p>19 Jul 2011</p>
+
+<p>Martin "Aatmaa" Suchanek  -  Martin: "Do you get failures on your integration branch, if so what do people do when a failure occurs?"</p>
+
+<p>Yes, failures can happen on the integration branch. When they do happen, it's usually because a) there is a bug in the feature branch, or b) there is an issue with the merge. If it's the former, the fix is applied to the feature branch (as an additional commit), and the feature branch is re-merged onto the integration branch again. If it's the latter, the fix is applied in the original merge commit.</p>
+
+
+<p>Martin: "I had another question pending about what happens on release branch, which from later comments I'm assuming you call the QA branch."</p>
+
+<p>Just to be clear, the "master" branch is the "what has been released" branch. The "qa" branch, which we could also call the "release candidate" branch, is "what is going to be released".</p>
+
+
+<p>Martin: "how long a time passes between putting the candidate features onto the QA branch and those features going into production."</p>
+
+<p>Feature branches are merged onto the "qa" branch during the sprint (ours is one week). The "qa" branch is released (merged onto master and tagged with release number) once a week, coinciding with a release.</p>
+
+
+<p>Martin: "The discussion above implies that QA work is done on the QA branch and that developers write tests as part of their work on the feature branch as they are developing it. Is that the case?"</p>
+
+<p>Manual QA testing is performed on "release candidate" builds, which are generated by the CI server off of the QA branch. Automated QA (unit, integration, UAT, etc) is done on the feature branch. Nothing can be committed directly to the QA branch (nor the dev/integration branch). Those are "merge only" branches.</p>
+
+<p>Hope this helps.</p>
+<p>20 Jul 2011</p>
+
+<p>Martin "Aatmaa" Suchanek  -  Jez: "I am really curious to understand why you need separate QA and release branches,"</p>
+
+<p>The release branch ("master") is merely a "marker branch". It contains merge commits (originating only from qa branches) and version markers (tags), according to releases.</p>
+
+<p>A QA branch, technically speaking, only exists for the duration of a sprint, during which it is composed and recomposed with various feature branches. It is hooked up to a CI build configuration, which generates release candidate artifacts.</p>
+
+
+<p>Jez: "and whether you think it would be a big deal just to treat the release branch as a tag of good versions of the QA branch."</p>
+
+<p>That's effectively what it is. Some notes:</p>
+
+<p>* for a single application, there could be many QA branches, depending on how many teams are concurrently working on that application</p>
+
+<p>* qa branches are merged onto master for every release, and then are nuked (for finished teams), or reset (for teams continuing with a next sprint).</p>
+
+<p>* I'm not sure what you mean by a "good version" of a QA branch. A qa branch is either released (merged onto master) or not. For the latter scenario, the branch has no relationship to master.</p>
+
+
+<p>Jez: "Also - no, I haven't used git flow,"</p>
+
+<p>I would recommend you check it out, as a pre-requisite. Some notes on the default git flow guidance:</p>
+
+<p>* it's trunk based (once a feature branch is merged onto develop, it's hard to undo that)</p>
+
+<p>* the porcelain is prescriptive about versioning ("relaese", "hotfix", "bugfix")</p>
+
+<p>* the "release branch" timing concedes a (serial) division between "dev time" and "qa time"</p>
+
+
+<p>Hope this helps.</p>
+<p>20 Jul 2011 (edited)</p>
+
+<p>David Gadd  -  Martin has described above how to handle failures in the integration branch for two causes: merge conflicts, or feature bugs. A third cause could be refactoring, and I believe earlier in the thread a concern was raised how this would impact the freedom to refactor. In other words, if another dev does a refactoring in their feature, and our merge breaks as result, how is this handled?</p>
+
+<p>It would depend on the size of the refactoring. For a small refactoring (a couple of method renamings) the other dev could adopt that refactoring in his own feature branch and then re-merge to the integration branch. For a larger refactoring, discussion between devs would likely lead to the adoption of a scaffolding branch, as mentioned a few threads ago:</p>
+
+<p>"What about major refactorings or new archicture/scaffolding that one or more features need to share? In that case, a new ticket (eg. Dev task ABC-145) is created to hold that shared work and a branch is created (again, off of the start-of-cycle tag) to hold that major refactoring or scaffolding. The features requiring this branch change their start point/dependency from the start-of-cycle tag to this refactoring/scaffolding branch and they will retain this dependency until the end of the release."</p>
+<p>20 Jul 2011</p>
+
+<p>Martin Fowler  -  Thanks for all the answers, I think I'm getting a clearer picture of your workflow now.</p>
+
+<p>Another question. Clearly one of the main drivers for this is the ability to choose a subset of features to deploy in the next release. Could you tell me roughly how often this happens, and how many features you do deploy. Something like "we usually build around x features per sprint, and deploy y of them". For those that don't get deployed, what are the common reasons for not deploying them?</p>
+<p>21 Jul 2011</p>
+
+<p>Martin Fowler  -  Looking through this, it seems that part of the earlier misunderstandings were not just on different semantics of the term "feature branch" but also different meanings to the word "feature".</p>
+
+<p>As I look at comments from +Adam Dymitruk / David Gadd / Martin Suchanek it seems to me you have a precise definition of "feature", meaning some unit of functionality that you can build in two or three days. Generally in my travels, I've seen a much broader use of the term - meaning any functionality that's seen as a unit by users. So Pivot Tables in Excel might be described as a feature. In this usage features could be as small as 2-3 days, but also as long as weeks or months to build. (In Extreme Programming, Kent used the term "story" to mean a fine-grained feature along the lines that Adam et al use it. I tended to be wary of using that term since it was specific to XP, but in recent years it seems to have gained general usage in the Agile world, so now I make more use of that term.)</p>
+
+<p>This different usage of "feature" obviously has a consequence when we talk of feature branches. We can both agree on a definition of feature branch as isolating the work done for a feature on its own branch, but the different usage of "feature" means very different workflows in practice. However this misunderstanding could well be running deeper.</p>
+
+<p>In particular there's no equivalence between fine-grained feature branching and feature toggles. People I know would hardly ever use feature toggles for individual stories. Feature toggles only come into play when there is some larger-scale functionality that the customer treats as a unit, but requires several iterations to build. Even then you'd only use feature toggles if you cannot find a way to release that functionality gradually, or you can't find a way to release the user-visible elements in the last iteration. In that circumstance the decision is between a feature toggle or a long-running feature branch (one that would be open for weeks or months). I get the sense that you dislike long-running feature branches almost as much as I do, so I don't know what you would do in that situation. Certainly I would see it as entirely reasonable if a team running your workflow used a feature toggle to handle that problem.</p>
+
+<p>I wouldn't say that feature toggles are hacks, but they are a tool to only be used in particular circumstances. They come with definite risks, but I think those risks are smaller than long-running feature branches.</p>
+<p>21 Jul 2011 (edited)</p>
+
+<p>David Gadd  -  Hi Martin,</p>
+
+<p>We are currently aiming for 1-week sprints. The number of features being worked on would depend on the number of devs/qa on the team (we have multiple teams of different sizes), but probably about 2-4 JIRA tickets (primarily stories, but some dev tasks or bugs) per developer. The bug ticket count will obviously vary from sprint to sprint. The goal is a 1:1 ratio between sprint and release, but we aren't always reaching that goal at present (We have many clients: web, web services, batch processes, etc., each with different release considerations.).</p>
+
+<p>With such short sprints, we are putting a premium on granularity of the stories, to break them down as much as possible. In that context, we are then trying to start each ticket (or feature, or story/dev task/bug--so many semantic variations...) as a separate branch off the start commit to achieve the isolation goal. This is followed by frequent merging into the integration/dev branch as discussed above to achieve the integration goal.</p>
+<p>24 Jul 2011</p>
+
+<p>Dario Seminara  -  This only may work with rigorous CI practice, by merging the feature to mainline as early as possible (and NOT at the final of sprint/release cycle). Otherwise the whole team (or a martyr) will be tortured in a merge/integration hell just before the dead-line.</p>
+<p>In addition, the cost of keeping the features isolated one for other on branches are the more painful merges which must be mitigated by using strategies to save early resolution of merges/conflicts for certain groups/combination of features (e.g. save the merge between feature A and B in a tag to potentially exclude C from release while keeping A,B and C on mainline)</p>
+<p>24 Aug 2011</p>
+
+<p>Adam Dymitruk  -  We have not seen any cost to keeping features separate.</p>
+<p>25 Aug 2011</p>
+
+<p>Dario Seminara  -  The cost of keeping features separate is to lose early integration only to gain speculative isolation, this means more complex and unpredictable integration events which can ruin short-term planning. But, sometimes, this disadvantage is compensated (or exceeded) by the described benefits. To mitigate the bad effects it's necessary to ensure the maximum amount of early integration, this can be done togheter with keeping features separated by doing speculative early integration of features groups to mitigate the complexity and unpredictability of the integration "events" (e.g. maintaining a mainline to integrate all the features just when completed while the all the feature branches is created from a common point of the history to keep them separated is simple but elemental approach)</p>
+<p>25 Aug 2011</p>
+
+<p>Adam Dymitruk  -  In short, as started in the other comments, we do frequently integrate and make use of rerere and other merge points to make that simple and fast.</p>
+<p>25 Aug 2011</p>
+
+<p>Dario Seminara  -  rerere sound interesting, I'll take a look. It's possible to easy share the recorded conflict resolution with the whole team?</p>
+<p>25 Aug 2011</p>
+
+<p>Adam Dymitruk  -  Yes you can but it's not built in. sync the .git/rr-cache directory via scripts etc.</p>
+<p>25 Aug 2011 (edited)</p>
+
+<p>Julián Landerreche  -  Hi. Not sure if this interesting discussion is being continued somewhere else.</p>
+<p>I'm a bit n00b in all things DVCS, CI, CD, branching strategies.</p>
+
+<p>I chimed in just to share this link which I think is highly on topic:</p>
+
+<p>http://scottchacon.com/2011/08/31/github-flow.html</p>
+
+<p>Those are the thoughs of Scott Chacon on "git flow" (the tool and the branching model that it promotes), why he don't dig it and how they do stuff at GitHub.</p>
+<p>8 Nov 2011</p>
+
+<p>Adam Dymitruk  -  Thanks for the link. I remember reading that. I had a good discussion with Scott at alt.net Seattle about this approach</p>
+<p>10 Nov 2011</p>
+
+<p>Bradford Smith  -  I don't really get this: "They should be integrated into an integration branch almost as often as you commit to them." What if management decides to nix a feature you've been working on for a week? What would happen to the integration branch? Or is the integration branch something completely separate from the "develop" branch which is described in "Git Flow a Successful Branching Strategy"?</p>
+<p>7 Dec 2011</p>
+
+<p>Nic Ferrier  -  I've used "feature branching" as described by Adam. My experience was over the last 4 years, using mercurial not git, but the same flow of developers working on a ticket of work, pushing changes into a central store of per-ticket repositories where ci was run and where I could select them for release based on ci and code review results.</p>
+
+<p>Ticket work was either bugs or features. Mostly very short, less and 1 or 2 days but sometimes longer, several weeks even.</p>
+
+<p>A little more about the ci environment: we had a central store of repositorys. Each reposiotry would be created automatically from ticket status. The developer could clone the per-ticket repository and work on it. Any change pushed to the repository would be CI'd. The repositorys were all also available underneath a webserver, so anyone could look at one as a running instance (thanks to this https://github.com/woome/multiserver).</p>
+
+<p>When we wanted to release we'd merge 1 or a bunch of those ticket repos into a trunk and that would then be pushed through all the stages of release (acceptance tests on the trunk, move to staging env with more complex infra, acceptance tests again, move to live, different acceptance tests on live).</p>
+
+<p>At any stage in the release, if the acceptance tests failed we could always roll back to the previous release tag.</p>
+
+<p>We did this several times a day normally.</p>
+
+<p>I definitely think a new description is needed because this is a very powerful technique. I totally understand the pejorative sense of feature branching. But this method is really poweful too.</p>
+<p>9 Dec 2011</p>
+
+<p>Adam Dymitruk  -  Bradford, it's something completely different. Otherwise this would just be git flow with features started at a common point for a period of time.</p>
+<p>9 Dec 2011</p>
+
+<p>Adam Dymitruk  -  Nic, hg might have it's issues with heavier branches.</p>
+<p>9 Dec 2011 (edited)</p>
+
+<p>Ward Cunningham  -  This has certainly been an interesting but difficult thread. I'm left with the overwhelming feeling that git workflow innovation will be the contribution that this decade gives to large-scale engineering. I wonder if someone could come up with Ubiquitous Language that could reduce the above conversation to five posts? With that language in hand we could complete the contribution by 2014.</p>
+<p>9 Dec 2011</p>
+
+<p>Adam Dymitruk  -  Thanks Ward :) as initially started this was just a dump of ideas and a quick way of documenting the process. Over the break, I'll put this in a proper blog post series.</p>
+<p>9 Dec 2011</p>
+
+<p>Nic Ferrier  -  Adam, we just used clones, not internal branches. hg, like git, has quite efficient on box storage. disc space is cheap etc...</p>
+<p>9 Dec 2011</p>
+
+<p>Adam Dymitruk  -  Nic, but it does track what branch a commit belongs to. That's pretty heavy in a process that expects a lot of resetting of branches</p>
+<p>9 Dec 2011</p>
+
+<p>Nic Ferrier  -  We just threw them away if we didn't want them. Clone the trunk, pull the ticket clones in (that you want, note hg's lovely "in" command), rm the clone if you don't want it anymore. If you do want it, tag it and push it to trunk. If you decide you don't want it later. clone the trunk to the previous tag, remove the trunk, rename the clone as trunk. Very simple, slightly expensive on disc space but we did 1000s of releases a year on a single box with no hardware trouble.</p>
+
+<p>I think git branching is better... we ended up with mercurial for various reasons (not least that we were a python shop). It did work well.</p>
+<p>9 Dec 2011 (edited)</p>
+
+<p>Adam Dymitruk  -  I like the idea of not having to clone all the time. We do this locally at each dev's machine. Seconds add up</p>
+<p>9 Dec 2011</p>
+
+<p>Aurélien Pelletier  -  I've followed the exact same path, git flow improved with feature branches created from a common point (master) instead of different commits on develop. Here is a "git flow" like drawing of this workflow http://blogpro.toutantic.net/2012/01/02/another-git-branching-model/</p>
+<p>Hope it helps people to visualize and understand the flow.</p>
+<p>2 Jan 2012</p>
+
+<p>Sylvain Benner  -  +Adam Dymitruk I'm not sure, but what your workflow seems to be is branch-per-task pattern as PlasticSCM tries to introduce here: http://www.plasticscm.com/features/task-driven-development.aspx</p>
+<p>11 Jan 2012</p>
+
+<p>Brad Appleton  -  There seems to be a lot of confusion about whether or not the "traditional" definition of feature-branches (or branch-per-feature) are "long-live" with no cross-integration. The problem here isnt whether or not feature-branches are good or bad, its about having un-integrated, un-synchronized work-in-process (inventory) for any long-lived period time.</p>
+
+<p>The "traditional" definition of feature-branches certainly implies that they are long-lived, but it doesnt (by itself) specify one way or the other how (in)frequently integration is done across features. That's because Feature-Branch is not a "standalone" practice and always has to go hand-in-hand with at least one integration-policy.</p>
+
+<p>* Feature-branches with late/big-bang integration are almost always bad.</p>
+
+<p>* Feature branches that are integrated to a "mainline" daily (or even weekly) are not bad and usually pretty darn good.</p>
+
+<p>* Back-merging here is usually just considered keeping up with the latest state of the product-wide codeline. It is not a bad thing. It does cost you "separability" of the feature later if that was a requirement.</p>
+
+<p>* Feature-Toggles are not necessarily a hack - but if its done with spaghetti-like conditional compilation (or even run-time conditionals everywhere) then that is a very "hacky way" of doing it. Better ways of doing it involve proven design techniques like wrapper-facades, configurator/multiplexor, dependency injection, etc. They cost you more in up-front effort, but can pay off big-time over the long-term</p>
+
+<p>* A better way of letting feature selection/delection design be "emergent" is to focus on the testing aspects of those features and use an acceptance-test-driven approach (with a little bit of "feature-injection" thrown in) that looks at when and how different "pieces" of features need to be tested in isolation of other features and when they shouldnt be, and to let the testing techniques of stubs, mocks, dependency-injection, and (configuration/feature) "factories" and allow a design to progressively emerge that lets you isolate testing and running/building of necessary feature combinations as driven by integration/testing as they relate to business-priorities.</p>
+
+<p>I again must refer back to the "four rules of simple codelines" that were readily derived from the "four rules of simple code" (see http://blog.bradapp.net/2008/06/four-rules-for-simple-codeline.html). Those apply to the use (and misuse) of feature-branching too.</p>
+
+<p>Sylvain - are you suggesting that PlasticSCM introduced (as in originated or coined) the branch-per-task pattern? I know I saw it reffered to as branch-per-task and even task-branch at least a decade before PlasticSCM came along.</p>
+<p>31 Jan 2012 (edited)</p>
+
+<p>Adam Dymitruk  -  Thanks Brad, feature toggles are a hack even when written correctly. It is superfluous code that's not needed for a feature to be implemented. Software is complicated enough. They are an antipattern for the fact that they add complexity with no end user benefit.</p>
+<p>31 Jan 2012</p>
+
+<p>Sylvain Benner  -  +Brad Appleton Hi Brad, I meant "describe", sorry for my bad English!</p>
+<p>I think the discussion about "branch-per-feature" is misleading because the pattern described by this post is an implementation of "branch-per-task" pattern. It happens to be that user stories size are reduced to their minimum (see +David Gadd comments) in order to be branched off more efficiently. Features are not the only type of branch following the same pattern, you can find bugs, documentation, refactoring and as far as I know, these are not features, they are tasks.</p>
+<p>31 Jan 2012 (edited)</p>
+
+<p>Sylvain Benner  -  +Adam Dymitruk "Thanks Brad, feature toggles are a hack even when written correctly." Why be so sectarian ? You know, better solutions are rarely extrem solutions, they are not white or black. Best solutions always lie between two extrems, they are grey. Actually, feature toggles can be a feature. For certain types of software you cannot live without them. As +Brad Appleton said, feature toggles must be correctly implemented as well as feature branches must be often integrated. If you don't follow correctly the manual, there is no good solution, all best patterns of the world are worth nothing if not correctly implemented !</p>
+<p>31 Jan 2012 (edited)</p>
+
+<p>Brad Appleton  -  +Sylvain Benner Adam writes: "Feature toggles are a heck even when written correctly" -- Unfortunately it is true that the way people usually do it at first is a hack. And of course in many kinds of applications it is a requirement to be able to do feature toggling at runtime. It still has to be subject to all the same rules about clean-code and refactoring and code-smells or it quickly becomes spaghetti-code of compile-time switches or if/elsif/elsif/... nightmares.</p>
+
+<p>But the code to do it is no more or less "superfluous" than mocks, stubs, fixtures, dependency-injection, etc. All of which is usually deemed to add great value to the codebase and its quality by not only making it quicker and easier to automate &amp; execute tests but which also help make the design more modular, encapsulated, and loosely coupled (etc.).</p>
+
+<p>HOWEVER, It needs to be driven by the need to be able to test the features independently as well as in combination, and then the appropriate (non-hacky) simple structure will emerge. The issue is a trade-off of complexity (late-binding) and integration debt (and remember, integration debt grows non-linearly the longer the code is unsynchronized with the rest of the product's codebase).</p>
+
+<p>And it ultimately comes down to whether or not your customer will accept a shipment with partial feature implementation, and how long you'd have to wait (and how much changes+complexity would be incurred) before you could finally integrate. If the customer will accept it, then there is no need to do feature-toggles because the alternative isnt blocking product-wide integration/synchronization.</p>
+
+<p>So the options are either pay-up-front (having to design a non-hack late-binding time feature selection/configuration mechanism), pay-later (either in terms of late integration, or late DIS-integration by having to subtract a feature you already integrated) or else pay as you go (do it the emergent-design way, which is risky, and likely to end-up as a hack if you dont make it follow the same rules for refactoring, smells, and cleaning-up the smells).</p>
+
+<p>Often, unless the risk is very high, or the risk is moderate but the cost when it happens is intolerable, then it may be a lot easier to simply integrate cross-features anyway (without feature-toggles) and assume that it will be easier to subtract one feature later than to do late-integration of all of them.</p>
+<p>16:04 (edited)</p>
+
+<p>Adam Dymitruk  -  One thing that people are missing is how easily you can remerge all the other features with the use of rerere. Much better than a toggle. Also, toggles are not as homogeneous as applying an IoC, mock or some other such framework.</p>
+<p>16:06</p>
+
+<p>Adam Dymitruk  -  Where toggles make sense is only if they are features themselves and the product owner sees the value it brings. Even then, shipping shitty code to production is not something I'm going to encourage.</p>
+<p>16:08</p>
+
+<p>Adam Dymitruk  -  ..even though it's "toggled off"</p>
+<p>16:20</p>
+
+<p>Brad Appleton  -  Hmmn - methinks you are making more assumptions about the design implied by a "feature toggle". In particular you seem to suggest that toggles cant be implemented by "applying an IoC, Mock, or some other such framework." And yet that is exactly what I'm talking about (and Ive seen it done that way -- and there are several well-established patterns for it).</p>
+
+<p>So you seem to have some specific ideas in mind about the design and implementation of feature-toggles that I think should not be assumed here (tho - with those assumption in place, I can understand why you would believe the result is always a hack).</p>
+
+<p>As far as what the product-owner sees w.r.t feature-toggles, if what you were saying is valid then the same would be true of doing refactoring or TDD, and I think its the whole team (include the product owner) that needs to see the value it brings (in terms if its impact on velocity and quality).</p>
+
+<p>So perhaps you can say more about what you assume "feature toggles" means and why it necessary excludes non-crappy design structure and cant be implemented homogeneously like an IoC, mock, or other such framework. Does "feature toggle" in your mind imply something more specific than a method of being able to configure how and when specific features can be enabled at run-time (without always literally being a "toggle" per-se)?</p>
+<p>16:28</p>
+
+<p>Brad Appleton  -  Adam: "how easily you can remerge all the other features with the use of rerere." -- what do you mean by RE-merge? I thought the whole issue here is that they wouldnt have been merged at all yet. And I guess Ive been assuming the use of a merge-function that already has the builtin smarts to know which conflicts have already been resolved and which haven't and wouldn't try to remerge them (I guess I'm spoiled, Ive been used to that for over a decade or two)</p>
+<p>16:36</p>
+
+<p>Adam Dymitruk  -  You remerge when you want to exclude a feature. I'm going to rewrite this article as it's not clear enough</p>
+<p>17:04</p>
