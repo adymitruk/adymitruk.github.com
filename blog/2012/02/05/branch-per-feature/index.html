@@ -108,7 +108,7 @@
 
 <p>Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. This was a vicious circle as the feature would diverge further and further from other features or the mainline. Features should be as atomic as possible and your development process should abide by the <a href="http://en.wikipedia.org/wiki/Open/closed_principle">Open Close Principle</a>. Features should be small.</p>
 
-<p><img src="images/small-branches.png" /></p>
+<p><img src="/images/small-branches.png" /></p>
 
 <p>You can see that the branches have a couple of commits each. We start with the end in mind with failing tests and implement the feature in the following commit. This would be the minimal amount of commits to expect on a typical feature. They won&#8217;t typically be that small.</p>
 
@@ -116,11 +116,11 @@
 
 <p>They should be integrated into an integration branch almost as often as you commit to them. This gives feedback immediately. You have some sort of <a href="http://en.wikipedia.org/wiki/Continuous_integration">CI</a> running off of the integration branch to tell you if your changes are not adversely affecting other work. This gives you the immediate feedback of trunk-based integration while keeping your work organized and malleable.</p>
 
-<p><img src="images/git-log-integration-branch.png" /></p>
+<p><img src="/images/git-log-integration-branch.png" /></p>
 
 <p>You can follow the lines here but it&#8217;s not easy as you don&#8217;t get &#8220;swim lanes&#8221; for your branches. You can see each time that we merged a feature into dev by finding the &#8220;Merge branch &#8216;FTR-X&#8217; into dev&#8221;. We can use <em><a href="http://schacon.github.com/git/git-show-branch.html">git show-branch</a></em> to see what commits exist in what branches:</p>
 
-<p><img src="images/git-show-branch-integration.png"/></p>
+<p><img src="/images/git-show-branch-integration.png"/></p>
 
 <p>Just a note that we usually make the commit messages prefixed with FTR-X which corresponds to a ticket in <a href="http://www.atlassian.com/software/jira/overview">Jira</a>. This way you know at a glance what feature a commit belongs to.</p>
 
@@ -140,11 +140,11 @@
 
 <p>A feature passes QA only if it has been integrated with all the other features that are completed. This brings us to a very light weight branch called QA or RC (release candidate). Once a feature is finished, it gets integrated to the RC branch and <a href="http://www.jetbrains.com/teamcity/">TeamCity</a> or whatever CI tool you have makes a release build. This build upon being tested can throw this feature or any other back to development should they fail. Your CI tool/process will mark this with an incremented <em>Release Candidate</em> tag.</p>
 
-<p><img src="images/release-candidate-branch.png" /></p>
+<p><img src="/images/release-candidate-branch.png" /></p>
 
 <p>You can see that that the incomplete feature 4 is not yet part of the release candidate branch.</p>
 
-<p><img src="images/release-candidate-tags.png" /></p>
+<p><img src="/images/release-candidate-tags.png" /></p>
 
 <p>Here you can list all that&#8217;s been merged into the release candidate.</p>
 
@@ -154,19 +154,19 @@
 
 <p>Now anyone that tries to integrate that feature and has that conflict will not have to resolve it. No dev required to put together a build. This is a manual share right now if needed. I should have the script published in about a week that does this behind the scenes. If you want to do it yourself, look no further than the .git/rr-cache folder in your repository. Simple synchronization between all devs is the bare minimum that is needed. Currently this is a branch that has it&#8217;s own branch with an independent root. Wrapping the git command to intercept fetch, pull and push makes it easy to update the rerere. Any git command can be made to look at an alternate folder for the work tree and the repository itself.</p>
 
-<p><img src="images/conflict-resolution.png" /></p>
+<p><img src="/images/conflict-resolution.png" /></p>
 
 <p>Notice that the conflict has been marked and we resolve it by just rewriting the file to make both branches agree.</p>
 
-<p><img src="images/resolution-recording.png" /></p>
+<p><img src="/images/resolution-recording.png" /></p>
 
 <p>Here, since we had rerere enabled, git records how we resolved this particular conflict. This will help us when we get to the release candidate branch and other people&#8217;s work later on.</p>
 
-<p><img src="images/resolution-storage.png" /></p>
+<p><img src="/images/resolution-storage.png" /></p>
 
 <p>When we examine the .git folder, we can see how the resolution is stored. Just like blobs, the pre-conflict image is what determines the SHA1 hash that is the name of the directory that the conflict resolution files will be stored under. The content of these files shows just how simple even advanced concepts such as rerere are when we look at how they are implemented.</p>
 
-<p><img src="images/resolution-replay.png" /></p>
+<p><img src="/images/resolution-replay.png" /></p>
 
 <p>Git now reuses our previous resolution when we had that conflict on the dev branch. It does not make this an automatic commit of the merge - just in case. We examine the file that was conflicted and are fine with it and go ahead and commit the merge.</p>
 
@@ -186,11 +186,11 @@
 
 <p>Here we have decided that feature 3 is no good and we want to make a build without it:</p>
 
-<p><img src="images/remake-release-candidate.png" /></p>
+<p><img src="/images/remake-release-candidate.png" /></p>
 
 <p>Now we can see that feature 3 is not part of this release candidate:</p>
 
-<p><img src="images/release-candidate-4.png" /></p>
+<p><img src="/images/release-candidate-4.png" /></p>
 
 <h2>Shared code</h2>
 
