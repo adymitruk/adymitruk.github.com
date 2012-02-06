@@ -9,7 +9,7 @@
   <meta name="author" content="Adam Dymitruk">
 
   
-  <meta name="description" content="This is the first post using Octopress (I have been editing it though to get some things working). So far it&#8217;s awesome. I&#8217;ll have more &hellip;">
+  <meta name="description" content="Features are small Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,162 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/05/branch-per-feature/">Branch-per-Feature</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-05T22:38:00-08:00" pubdate data-updated="true">Feb 5<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/02/05/branch-per-feature/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Features are small</h2>
+
+<p>Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. This was a vicious circle as the feature would diverge further and further from other features or the mainline. Features should be as atomic as possible and your development process should abide by the <a href="http://en.wikipedia.org/wiki/Open/closed_principle">Open Close Principle</a>. Features should be small.</p>
+
+<p><img src="images/small-branches.png" /></p>
+
+<p>You can see that the branches have a couple of commits each. We start with the end in mind with failing tests and implement the feature in the following commit. This would be the minimal amount of commits to expect on a typical feature. They won&#8217;t typically be that small.</p>
+
+<h2>Integrate relentlessly</h2>
+
+<p>They should be integrated into an integration branch almost as often as you commit to them. This gives feedback immediately. You have some sort of <a href="http://en.wikipedia.org/wiki/Continuous_integration">CI</a> running off of the integration branch to tell you if your changes are not adversely affecting other work. This gives you the immediate feedback of trunk-based integration while keeping your work organized and malleable.</p>
+
+<p><img src="images/git-log-integration-branch.png" /></p>
+
+<p>You can follow the lines here but it&#8217;s not easy as you don&#8217;t get &#8220;swim lanes&#8221; for your branches. You can see each time that we merged a feature into dev by finding the &#8220;Merge branch &#8216;FTR-X&#8217; into dev&#8221;. We can use <em><a href="http://schacon.github.com/git/git-show-branch.html">git show-branch</a></em> to see what commits exist in what branches:</p>
+
+<p><img src="images/git-show-branch-integration.png"/></p>
+
+<p>Just a note that we usually make the commit messages prefixed with FTR-X which corresponds to a ticket in <a href="http://www.atlassian.com/software/jira/overview">Jira</a>. This way you know at a glance what feature a commit belongs to.</p>
+
+<h2>Don&#8217;t do back-merges</h2>
+
+<p>Or at least avoid them. A back-merge is where you want to use something from the integration branch to help you get your work done on the feature. This is a smell that you don&#8217;t have independent stories. A reasonable middle-ground is <a href="http://schacon.github.com/git/git-cherry-pick.html">cherry-picking</a>. A successfully cherry-picked commit will not cause you issues when you merge in the future.</p>
+
+<p>Keeping a feature branch filled with commits that only attain what the feature is supposed to do will make working with it much more flexible. An understanding of the <a href="http://eagain.net/articles/git-for-computer-scientists/">DAG (directed acyclic graph)</a> that makes up Git history will make this easy to understand.</p>
+
+<h2>Involve QA from the start</h2>
+
+<p>This should not even be a contentious point anymore. We all know how important tight feedback loops are. There should not be a QA department with QA employees. QA should be a hat that is worn at different or same people at different times.</p>
+
+<p>Knowing what your Acceptance Criteria is and how you will prove it from the start is integral to getting a lot of things gelling - including a successful branch-per-feature regiment.</p>
+
+<p>A proper DSL a la Ubiquitous Language (see <a href="http://domaindrivendesign.org/">Domain Driven Design</a>) is at the heart of this. The tool that best communicates across to the Product Owner, Regression/Specification Testing and <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">Behaviour Driven Design</a> feedback is currently <a href="https://github.com/adymitruk/storyteller">StoryTeller</a>. One thing that it offers that no other tools offer is communication to the person writing the Acceptance Tests of what the system is capable of doing with the smallest amount of friction caused by technology. You simply pick what you want to do by clicking on links, filling out text boxes and selecting from drop-downs. There is no guessing as to how a tool might interpret your free-form text with it&#8217;s regex and English-parsing goodness. More on this in a future post.</p>
+
+<p>A feature passes QA only if it has been integrated with all the other features that are completed. This brings us to a very light weight branch called QA or RC (release candidate). Once a feature is finished, it gets integrated to the RC branch and <a href="http://www.jetbrains.com/teamcity/">TeamCity</a> or whatever CI tool you have makes a release build. This build upon being tested can throw this feature or any other back to development should they fail. Your CI tool/process will mark this with an incremented <em>Release Candidate</em> tag.</p>
+
+<p><img src="images/release-candidate-branch.png" /></p>
+
+<p>You can see that that the incomplete feature 4 is not yet part of the release candidate branch.</p>
+
+<p><img src="images/release-candidate-tags.png" /></p>
+
+<p>Here you can list all that&#8217;s been merged into the release candidate.</p>
+
+<h2>Share your hard work</h2>
+
+<p>There will be conflicts when you merge. This is a fact of life when work is done by more than one person. When you integrate often from your feature to the integration branch, the conflicts you solve should be remembered. This is done by git&#8217;s <a href="http://progit.org/2010/03/08/rerere.html">rerere</a> but could be simulated in other systems with little effort. The key is to set up a way of sharing these auto-resolution conflicts to the rest of the team.</p>
+
+<p>Now anyone that tries to integrate that feature and has that conflict will not have to resolve it. No dev required to put together a build. This is a manual share right now if needed. I should have the script published in about a week that does this behind the scenes. If you want to do it yourself, look no further than the .git/rr-cache folder in your repository. Simple synchronization between all devs is the bare minimum that is needed. Currently this is a branch that has it&#8217;s own branch with an independent root. Wrapping the git command to intercept fetch, pull and push makes it easy to update the rerere. Any git command can be made to look at an alternate folder for the work tree and the repository itself.</p>
+
+<p><img src="images/conflict-resolution.png" /></p>
+
+<p>Notice that the conflict has been marked and we resolve it by just rewriting the file to make both branches agree.</p>
+
+<p><img src="images/resolution-recording.png" /></p>
+
+<p>Here, since we had rerere enabled, git records how we resolved this particular conflict. This will help us when we get to the release candidate branch and other people&#8217;s work later on.</p>
+
+<p><img src="images/resolution-storage.png" /></p>
+
+<p>When we examine the .git folder, we can see how the resolution is stored. Just like blobs, the pre-conflict image is what determines the SHA1 hash that is the name of the directory that the conflict resolution files will be stored under. The content of these files shows just how simple even advanced concepts such as rerere are when we look at how they are implemented.</p>
+
+<p><img src="images/resolution-replay.png" /></p>
+
+<p>Git now reuses our previous resolution when we had that conflict on the dev branch. It does not make this an automatic commit of the merge - just in case. We examine the file that was conflicted and are fine with it and go ahead and commit the merge.</p>
+
+<p>I&#8217;ll share the script that I&#8217;m writing once it&#8217;s finished. The resolutions get shared across a &#8220;resolutions&#8221; branch in the same repository.</p>
+
+<h2>Taking features out is more powerful than putting them in</h2>
+
+<p>This might sound counter-intuitive. But at the end of an iteration, a feature that you thought was done may not work as the last bits of testing on the build as a whole make releasing a no-go. Anyone should be able to take out that feature and release anyway.</p>
+
+<p>So the trick is not to take the feature out of the build. You make a build with the problem feature omitted. You can integrate that feature in the next iteration when there is time. Releasing a build should be painless.</p>
+
+<p>Don&#8217;t make a build to test out of the integration branch. Make a separate branch that can be reset relentlessly and tag release candidates. Reset this branch to the start commit of your iteration and merge all the features you know work.</p>
+
+<p>No conflicts. Remember rerere and the like? Anyone should be able to do this if you followed the practices here. This is &#8220;why&#8221; the hard work needs to be shared.</p>
+
+<p>The key is we &#8220;threw away&#8221; all previous merges and have to redo them. But remembering our conflict resolutions, this is now a trivial matter. If in doubt, we haven&#8217;t really thrown them away, they are still there to reference or use. Git&#8217;s pick-axe functionality makes it really easy to find certain code changes if you don&#8217;t know where to look.</p>
+
+<p>Here we have decided that feature 3 is no good and we want to make a build without it:</p>
+
+<p><img src="images/remake-release-candidate.png" /></p>
+
+<p>Now we can see that feature 3 is not part of this release candidate:</p>
+
+<p><img src="images/release-candidate-4.png" /></p>
+
+<h2>Shared code</h2>
+
+<p>You will quickly note how painful keeping shared code synchronized across the many applications that you have. This is usually handled by <em>git submodules</em>. If you don&#8217;t have explicit contracts between the shared libraries and your client applications, there is going to be a lot of work to ensure you have the right version deployed. Adhering to <a href="http://en.wikipedia.org/wiki/Open/closed_principle"> OCP (open closed principle)</a> is the only way out of this and buys the ability to have a rolling deployment. The preferred way is to have a submodule that contains all the messages needed to communicate in the system. You can enforce that only new messages get added with <a href="http://progit.org/book/ch7-3.html">server-side hooks</a> that will not allow existing messages to be modified or deleted - only new messages are allowed to be added.</p>
+
+<h2>Giant refactorings</h2>
+
+<p>Your work is as organized as is possible. Whether you elect to do this off of a certain point in time on the integration branch, release candidate branch or you started a feature branch for it, you have a way of tracking that work and can apply it as a merge, rebase or manual patch to another point if necessary. If there are large changes, we can do that work before we start on other features after a release. There is no magic bullet for refactoring across the board. Organized work and history help this - it doesn&#8217;t hinder it.</p>
+
+<p>Any hardships that you may encounter will be tempered by the fact that you are relentlessly sharing your conflict resolutions and continuously integrating. <strong>PROPER BRANCH-PER-FEATURE RELIES ON RELENTLESS CONTINUOUS INTEGRATION</strong></p>
+
+<h2>Toggles are a hack</h2>
+
+<p>There are exceptions. You&#8217;re a giant company. You need to enable a feature for a small subset of early adopter users. This is now an explicit feature that&#8217;s important to business. That&#8217;s where we all want to be but most of us are not.</p>
+
+<p>Having to make architectural changes because you can&#8217;t effectively organize your work is a process smell plain and simple. Some teams are not mature enough and this may be an OK solution temporarily.</p>
+
+<h2>This is Git Flow Improved</h2>
+
+<p>Most of this way of working started from the excellent post called <a href="http://nvie.com/posts/a-successful-git-branching-model/">&#8220;A Successful Git Branching Model&#8221;</a>. The important addition to this process is the idea that you start all features in an iteration from a common point. This would be what you released for the last one. This drives home the granular, atomic, flexible nature that features must exhibit for us to deliver to business in the most effective way. Git flow allows commits to be done on dev branches. This workflow does not allow that.</p>
+
+<p>The other key difference is no back-merge into the feature. Otherwise, you will not be able to exclude this feature later in the iteration.</p>
+
+<h2>It will be bad if you use old tools</h2>
+
+<p>Not having a snapshot based history will hurt as branching is effectively copying another branch which will be slow. Not having a base of where the branch originated will make merging difficult as you do not have a base to compare how each side of development has changed. There are many other issues with having a connected-only tool to support what you do in order to work with everyone.</p>
+
+<h2>We can always deploy</h2>
+
+<p>The release candidate builds represent production ready deployable packages. This is the most responsible way of doing Continuous Deployment. We have the latest completed and tested feature at our disposal. We don&#8217;t ship any code that does not belong to a feature that&#8217;s passed QA and all other tests. Having this option gives you the best position as an IT department. Business has the power to deploy whenever it wants to - and have the piece of mind that nothing is half-baked to the best of anyone&#8217;s knowledge.</p>
+
+<p><a href="/old-comments-about-branch-per-feature.html">Old comments from Google+</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -152,6 +308,10 @@
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/02/05/branch-per-feature/">Branch-per-Feature</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/01/25/a-fresh-start-octopress-provides-the-tooling-for-blogging/">A Fresh Start: Octopress Provides the Tooling for Blogging</a>
