@@ -110,7 +110,7 @@
 
 <p><img src="/images/small-branches.png" /></p>
 
-<p>You can see that the branches have a couple of commits each. We start with the end in mind with failing tests and implement the feature in the following commit. This would be the minimal amount of commits to expect on a typical feature. They won&#8217;t typically be that small.</p>
+<p>You can see that the branches have a couple of commits each. We start with the end in mind with failing tests and implement the feature in the following commit. This would be the minimal amount of commits to expect on a feature. They won&#8217;t typically be that small.</p>
 
 <h2>Integrate relentlessly</h2>
 
@@ -152,7 +152,7 @@
 
 <p>There will be conflicts when you merge. This is a fact of life when work is done by more than one person. When you integrate often from your feature to the integration branch, the conflicts you solve should be remembered. This is done by git&#8217;s <a href="http://progit.org/2010/03/08/rerere.html">rerere</a> but could be simulated in other systems with little effort. The key is to set up a way of sharing these auto-resolution conflicts to the rest of the team.</p>
 
-<p>Now anyone that tries to integrate that feature and has that conflict will not have to resolve it. No dev required to put together a build. This is a manual share right now if needed. I should have the script published in about a week that does this behind the scenes. If you want to do it yourself, look no further than the .git/rr-cache folder in your repository. Simple synchronization between all devs is the bare minimum that is needed. Currently this is a branch that has it&#8217;s own branch with an independent root. Wrapping the git command to intercept fetch, pull and push makes it easy to update the rerere. Any git command can be made to look at an alternate folder for the work tree and the repository itself.</p>
+<p>Now anyone that tries to integrate that feature and has that conflict will not have to resolve it. No dev required to put together a build. This is a manual share right now if needed. I should have the script published in about a week that does this behind the scenes. If you want to do it yourself, look no further than the .git/rr-cache folder in your repository. Simple synchronization between all devs is the bare minimum that is needed. Currently this is a branch that has it&#8217;s own independent root. Wrapping the git command to intercept fetch, pull and push makes it easy to update the rerere. Any git command can be made to look at an alternate folder for the work tree and the repository itself.</p>
 
 <p><img src="/images/conflict-resolution.png" /></p>
 
