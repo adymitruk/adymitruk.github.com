@@ -4,7 +4,7 @@
 
 url: http://www.dymitruk.com
 title: Adam Dymitruk
-subtitle: Adventures in Agile
+subtitle: Building Great Software
 author: Adam Dymitruk
 simple_search: http://google.com/search
 description:
@@ -90,7 +90,7 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: dymitruk
-disqus_show_comment_count: true
+disqus_show_comment_count: false
 
 # Google Analytics
 google_analytics_tracking_id: UA-28766333-1
