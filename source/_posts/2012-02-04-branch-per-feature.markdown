@@ -19,6 +19,8 @@ Old-school branch-per-feature meant that branches were large and long living to 
 
 You can see that the branches have a couple of commits each. We start with the end in mind with failing tests and implement the feature in the following commit. This would be the minimal amount of commits to expect on a typical feature. They won't typically be that small.
 
+<!-- more -->
+
 ## Integrate relentlessly
 
 They should be integrated into an integration branch almost as often as you commit to them. This gives feedback immediately. You have some sort of <a href="http://en.wikipedia.org/wiki/Continuous_integration">CI</a> running off of the integration branch to tell you if your changes are not adversely affecting other work. This gives you the immediate feedback of trunk-based integration while keeping your work organized and malleable.
