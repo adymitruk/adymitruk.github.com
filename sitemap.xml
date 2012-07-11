@@ -2,28 +2,32 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>
-            http://adymitruk.github.com/blog/2012/01/25/a-fresh-start-octopress-provides-the-tooling-for-blogging/
+            http://www.dymitruk.com/blog/2012/01/25/a-fresh-start-octopress-provides-the-tooling-for-blogging/
         </loc>
-        <lastmod>2012-03-10T08:01:09-08:00</lastmod>
+        <lastmod>2012-07-09T23:14:21-07:00</lastmod>
     </url>
     <url>
-        <loc>http://adymitruk.github.com/blog/2012/02/05/branch-per-feature/</loc>
-        <lastmod>2012-05-06T15:00:36-07:00</lastmod>
+        <loc>http://www.dymitruk.com/blog/2012/02/05/branch-per-feature/</loc>
+        <lastmod>2012-07-09T23:48:02-07:00</lastmod>
     </url>
     <url>
-        <loc>http://adymitruk.github.com/blog/archives/</loc>
-        <lastmod>2012-05-06T15:00:36-07:00</lastmod>
+        <loc>http://www.dymitruk.com/blog/2012/07/09/ndc-oslo/</loc>
+        <lastmod>2012-07-10T15:13:00-07:00</lastmod>
     </url>
     <url>
-        <loc>http://adymitruk.github.com/old-comments-about-branch-per-feature.html</loc>
-        <lastmod>2012-03-10T08:01:09-08:00</lastmod>
+        <loc>http://www.dymitruk.com/blog/archives/</loc>
+        <lastmod>2012-07-10T15:13:00-07:00</lastmod>
     </url>
     <url>
-        <loc>http://adymitruk.github.com/password.html</loc>
-        <lastmod>2012-03-10T08:01:09-08:00</lastmod>
+        <loc>http://www.dymitruk.com/old-comments-about-branch-per-feature.html</loc>
+        <lastmod>2012-07-09T23:14:21-07:00</lastmod>
     </url>
     <url>
-        <loc>http://adymitruk.github.com/</loc>
-        <lastmod>2012-05-06T15:00:36-07:00</lastmod>
+        <loc>http://www.dymitruk.com/password.html</loc>
+        <lastmod>2012-07-09T23:14:21-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dymitruk.com/</loc>
+        <lastmod>2012-07-10T15:13:00-07:00</lastmod>
     </url>
 </urlset>

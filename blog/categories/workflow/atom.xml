@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Workflow | Adam Dymitruk]]></title>
-  <link href="http://adymitruk.github.com/blog/categories/workflow/atom.xml" rel="self"/>
-  <link href="http://adymitruk.github.com/"/>
-  <updated>2012-05-06T15:01:50-07:00</updated>
-  <id>http://adymitruk.github.com/</id>
+  <link href="http://www.dymitruk.com/blog/categories/workflow/atom.xml" rel="self"/>
+  <link href="http://www.dymitruk.com/"/>
+  <updated>2012-07-10T17:07:46-07:00</updated>
+  <id>http://www.dymitruk.com/</id>
   <author>
     <name><![CDATA[Adam Dymitruk]]></name>
     
@@ -15,26 +15,29 @@
   
   <entry>
     <title type="html"><![CDATA[Branch-per-Feature]]></title>
-    <link href="http://adymitruk.github.com/blog/2012/02/05/branch-per-feature/"/>
+    <link href="http://www.dymitruk.com/blog/2012/02/05/branch-per-feature/"/>
     <updated>2012-02-05T22:38:00-08:00</updated>
-    <id>http://adymitruk.github.com/blog/2012/02/05/branch-per-feature</id>
+    <id>http://www.dymitruk.com/blog/2012/02/05/branch-per-feature</id>
     <content type="html"><![CDATA[<h2>Features are small</h2>
 
 <p>Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. This was a vicious circle as the feature would diverge further and further from other features or the mainline. Features should be as atomic as possible and your development process should abide by the <a href="http://en.wikipedia.org/wiki/Open/closed_principle">Open Close Principle</a>. Features should be small.</p>
 
-<p><img src="http://adymitruk.github.com/images/small-branches.png" /></p>
+<p><img src="http://www.dymitruk.com/images/small-branches.png" /></p>
 
-<p>You can see that the branches have a couple of commits each. We start with the end in mind with failing tests and implement the feature in the following commit. This would be the minimal amount of commits to expect on a feature. They won't typically be that small.</p>
+<p>You can see that the branches have a couple of commits each. We start with the end in mind with failing tests and implement the feature in the following commit. This would be the minimal amount of commits to expect on a typical feature. They won't typically be that small.</p>
+
+<!-- more -->
+
 
 <h2>Integrate relentlessly</h2>
 
 <p>They should be integrated into an integration branch almost as often as you commit to them. This gives feedback immediately. You have some sort of <a href="http://en.wikipedia.org/wiki/Continuous_integration">CI</a> running off of the integration branch to tell you if your changes are not adversely affecting other work. This gives you the immediate feedback of trunk-based integration while keeping your work organized and malleable.</p>
 
-<p><img src="http://adymitruk.github.com/images/git-log-integration-branch.png" /></p>
+<p><img src="http://www.dymitruk.com/images/git-log-integration-branch.png" /></p>
 
 <p>You can follow the lines here but it's not easy as you don't get "swim lanes" for your branches. You can see each time that we merged a feature into dev by finding the "Merge branch 'FTR-X' into dev". We can use <em><a href="http://schacon.github.com/git/git-show-branch.html">git show-branch</a></em> to see what commits exist in what branches:</p>
 
-<p><img src="http://adymitruk.github.com/images/git-show-branch-integration.png"/></p>
+<p><img src="http://www.dymitruk.com/images/git-show-branch-integration.png"/></p>
 
 <p>Just a note that we usually make the commit messages prefixed with FTR-X which corresponds to a ticket in <a href="http://www.atlassian.com/software/jira/overview">Jira</a>. This way you know at a glance what feature a commit belongs to.</p>
 
@@ -54,11 +57,11 @@
 
 <p>A feature passes QA only if it has been integrated with all the other features that are completed. This brings us to a very light weight branch called QA or RC (release candidate). Once a feature is finished, it gets integrated to the RC branch and <a href="http://www.jetbrains.com/teamcity/">TeamCity</a> or whatever CI tool you have makes a release build. This build upon being tested can throw this feature or any other back to development should they fail. Your CI tool/process will mark this with an incremented <em>Release Candidate</em> tag.</p>
 
-<p><img src="http://adymitruk.github.com/images/release-candidate-branch.png" /></p>
+<p><img src="http://www.dymitruk.com/images/release-candidate-branch.png" /></p>
 
 <p>You can see that that the incomplete feature 4 is not yet part of the release candidate branch.</p>
 
-<p><img src="http://adymitruk.github.com/images/release-candidate-tags.png" /></p>
+<p><img src="http://www.dymitruk.com/images/release-candidate-tags.png" /></p>
 
 <p>Here you can list all that's been merged into the release candidate.</p>
 
@@ -66,21 +69,21 @@
 
 <p>There will be conflicts when you merge. This is a fact of life when work is done by more than one person. When you integrate often from your feature to the integration branch, the conflicts you solve should be remembered. This is done by git's <a href="http://progit.org/2010/03/08/rerere.html">rerere</a> but could be simulated in other systems with little effort. The key is to set up a way of sharing these auto-resolution conflicts to the rest of the team.</p>
 
-<p>Now anyone that tries to integrate that feature and has that conflict will not have to resolve it. No dev required to put together a build. This is a manual share right now if needed. I should have the script published in about a week that does this behind the scenes. If you want to do it yourself, look no further than the .git/rr-cache folder in your repository. Simple synchronization between all devs is the bare minimum that is needed. Currently this is a branch that has it's own independent root. Wrapping the git command to intercept fetch, pull and push makes it easy to update the rerere. Any git command can be made to look at an alternate folder for the work tree and the repository itself.</p>
+<p>Now anyone that tries to integrate that feature and has that conflict will not have to resolve it. No dev required to put together a build. This is a manual share right now if needed. I should have the script published in about a week that does this behind the scenes. If you want to do it yourself, look no further than the .git/rr-cache folder in your repository. Simple synchronization between all devs is the bare minimum that is needed. Currently this is a branch that has it's own branch with an independent root. Wrapping the git command to intercept fetch, pull and push makes it easy to update the rerere. Any git command can be made to look at an alternate folder for the work tree and the repository itself.</p>
 
-<p><img src="http://adymitruk.github.com/images/conflict-resolution.png" /></p>
+<p><img src="http://www.dymitruk.com/images/conflict-resolution.png" /></p>
 
 <p>Notice that the conflict has been marked and we resolve it by just rewriting the file to make both branches agree.</p>
 
-<p><img src="http://adymitruk.github.com/images/resolution-recording.png" /></p>
+<p><img src="http://www.dymitruk.com/images/resolution-recording.png" /></p>
 
 <p>Here, since we had rerere enabled, git records how we resolved this particular conflict. This will help us when we get to the release candidate branch and other people's work later on.</p>
 
-<p><img src="http://adymitruk.github.com/images/resolution-storage.png" /></p>
+<p><img src="http://www.dymitruk.com/images/resolution-storage.png" /></p>
 
 <p>When we examine the .git folder, we can see how the resolution is stored. Just like blobs, the pre-conflict image is what determines the SHA1 hash that is the name of the directory that the conflict resolution files will be stored under. The content of these files shows just how simple even advanced concepts such as rerere are when we look at how they are implemented.</p>
 
-<p><img src="http://adymitruk.github.com/images/resolution-replay.png" /></p>
+<p><img src="http://www.dymitruk.com/images/resolution-replay.png" /></p>
 
 <p>Git now reuses our previous resolution when we had that conflict on the dev branch. It does not make this an automatic commit of the merge - just in case. We examine the file that was conflicted and are fine with it and go ahead and commit the merge.</p>
 
@@ -100,11 +103,11 @@
 
 <p>Here we have decided that feature 3 is no good and we want to make a build without it:</p>
 
-<p><img src="http://adymitruk.github.com/images/remake-release-candidate.png" /></p>
+<p><img src="http://www.dymitruk.com/images/remake-release-candidate.png" /></p>
 
 <p>Now we can see that feature 3 is not part of this release candidate:</p>
 
-<p><img src="http://adymitruk.github.com/images/release-candidate-4.png" /></p>
+<p><img src="http://www.dymitruk.com/images/release-candidate-4.png" /></p>
 
 <h2>Shared code</h2>
 
@@ -136,7 +139,7 @@
 
 <p>The release candidate builds represent production ready deployable packages. This is the most responsible way of doing Continuous Deployment. We have the latest completed and tested feature at our disposal. We don't ship any code that does not belong to a feature that's passed QA and all other tests. Having this option gives you the best position as an IT department. Business has the power to deploy whenever it wants to - and have the piece of mind that nothing is half-baked to the best of anyone's knowledge.</p>
 
-<p><a href="http://adymitruk.github.com/old-comments-about-branch-per-feature.html">Old comments from Google+</a></p>
+<p><a href="http://www.dymitruk.com/old-comments-about-branch-per-feature.html">Old comments from Google+</a></p>
 ]]></content>
   </entry>
   
