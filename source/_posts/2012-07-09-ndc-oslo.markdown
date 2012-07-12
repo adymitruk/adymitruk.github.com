@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NDC Oslo"
-date: 2012-07-09 23:15
+date: 2012-06-09 23:15
 comments: true
 categories:
 - conference
