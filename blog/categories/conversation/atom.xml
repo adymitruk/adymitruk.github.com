@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: conversation | Adam Dymitruk]]></title>
+  <link href="http://www.dymitruk.com/blog/categories/conversation/atom.xml" rel="self"/>
+  <link href="http://www.dymitruk.com/"/>
+  <updated>2012-07-11T19:06:02-07:00</updated>
+  <id>http://www.dymitruk.com/</id>
+  <author>
+    <name><![CDATA[Adam Dymitruk]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Met With Robert Today]]></title>
+    <link href="http://www.dymitruk.com/blog/2012/07/10/met-with-robert-today/"/>
+    <updated>2012-07-10T18:52:00-07:00</updated>
+    <id>http://www.dymitruk.com/blog/2012/07/10/met-with-robert-today</id>
+    <content type="html"><![CDATA[<p>Robert says hi</p>
+]]></content>
+  </entry>
+  
+</feed>
