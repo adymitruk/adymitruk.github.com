@@ -9,7 +9,7 @@
   <meta name="author" content="Adam Dymitruk">
 
   
-  <meta name="description" content="Continuous Tests is Free! Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event &hellip;">
+  <meta name="description" content="It&#8217;s unbelievable the kind of attention something simple can get. I&#8217;m still suprised at how many up-votes this answer is getting. In Git &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,67 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/18/filtering-by-author-name/">Filtering by Author Name</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-18T00:46:00-07:00" pubdate data-updated="true">Jul 18<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&#8217;s unbelievable the kind of attention something simple can get. I&#8217;m still suprised at how many up-votes <a href="http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits">this answer</a> is getting.</p>
+
+<p>In Git, filtering by author name is easy. Most people simply use the name of the committer that they are interested in. However, it&#8217;s a little more powerful due to the fact that the author option on git log is actually interpreted as regex. So for looking for commits by &#8220;Adam Dymitruk&#8221; it&#8217;s easier to just type <code>git log --author="Adam"</code> or use the last name if there more contributors with the same first name.</p>
+
+<p>You can also match on multiple authors by supplying the regex pattern. So to list commits by Jonathan or Adam, you can do this:</p>
+
+<pre><code>git log --author='\(Adam\)\|\(Jon\)'
+</code></pre>
+
+<p>However it&#8217;s tricky to exclude commits by a particular author or set of authors using regular expressions as noted <a href="http://stackoverflow.com/questions/406230/regular-expression-to-match-string-not-containing-a-word">here</a>. Instead, turn to bash and piping you can exclude commits authored by Adam by:</p>
+
+<pre><code>git log --format='%H %an' |  # get a list of all commit hashes followed by the author name
+  grep -v Adam |             # match the name but return the lines that *don't* contain the name
+  cut -d ' ' -f1 |           # from this extract just the first part of the line which is commit ref
+  xargs -n1 git log -1       # call git log from that commit stopped after 1 commit
+</code></pre>
+
+<p>A limitation of this is that some log options that you would want are not available such as <code>--graph</code> due to the mechanics of calling <code>git log</code> multiple times.</p>
+
+<h2>A Few More Details</h2>
+
+<p>The cut command is treating spaces as delimiters and is only returning the first field which is the sha1 of the commit.</p>
+
+<p>If you want to exclude commits commited (but not necessarily authored) by Adam, you can replace <code>%an</code> with <code>%cn</code>. This has the same effect as using <code>git log --committer=Adam</code> instead of author in the first example but for exclusions.</p>
+
+<p>Don&#8217;t be afraid to split your piped commands onto multiple lines. As long as a line ends with a pipe, bash knows there is more and will prompt for the next line. You can continue to do this until you have written what you want or pasted a multiline example from an example online. When you search history, it will be recalled as one line with proper semi-colons inserted if you used while loops or other flow control.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -248,6 +309,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/07/18/filtering-by-author-name/">Filtering by Author Name</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/06/09/ndc-oslo/">NDC Oslo</a>
       </li>
     
@@ -265,13 +330,16 @@
   <h1>Categories</h1>
   <ul id="categories">
     <li class='category'><a href='/blog/categories/branching/'>Branching (1)</a></li>
+<li class='category'><a href='/blog/categories/conference/'>Conference (1)</a></li>
 <li class='category'><a href='/blog/categories/continuous-integration/'>Continuous Integration (1)</a></li>
 <li class='category'><a href='/blog/categories/dvcs/'>DVCS (1)</a></li>
-<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/dotnet/'>DotNet (1)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (2)</a></li>
+<li class='category'><a href='/blog/categories/git-log/'>Git-Log (1)</a></li>
+<li class='category'><a href='/blog/categories/msysgit/'>MSysGit (1)</a></li>
 <li class='category'><a href='/blog/categories/merging/'>Merging (1)</a></li>
+<li class='category'><a href='/blog/categories/script/'>Script (1)</a></li>
 <li class='category'><a href='/blog/categories/workflow/'>Workflow (1)</a></li>
-<li class='category'><a href='/blog/categories/conference/'>conference (1)</a></li>
-<li class='category'><a href='/blog/categories/dotnet/'>dotnet (1)</a></li>
 
   </ul>
 </section>
