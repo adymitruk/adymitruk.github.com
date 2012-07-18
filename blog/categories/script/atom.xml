@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Script | Adam Dymitruk]]></title>
   <link href="http://www.dymitruk.com/blog/categories/script/atom.xml" rel="self"/>
   <link href="http://www.dymitruk.com/"/>
-  <updated>2012-07-18T02:02:30-07:00</updated>
+  <updated>2012-07-18T02:05:40-07:00</updated>
   <id>http://www.dymitruk.com/</id>
   <author>
     <name><![CDATA[Adam Dymitruk]]></name>
@@ -43,7 +43,7 @@
 
 <p>If you want to exclude commits commited (but not necessarily authored) by Adam, you can replace <code>%an</code> with <code>%cn</code>. This has the same effect as using <code>git log --committer=Adam</code> instead of author in the first example but for exclusions.</p>
 
-<p>Don't be afraid to split your piped commands onto multiple lines. As long as a line ends with a pipe, bash knows there is more and will prompt for the next line. You can continue to do this until you have written what you want or pasted a multiline example from an example online. When you search history, it will be recalled as one line with proper semi-colons inserted if you used while loops or other flow control.</p>
+<p>Don't be afraid to split your piped commands onto multiple lines. As long as a line ends with a pipe, bash knows there is more and will prompt for the next line. You can continue to do this until you have written what you want or pasted a multiline snippet from an example online. When you search history, it will be recalled as one line with proper semi-colons inserted if you used while loops or other flow control.</p>
 ]]></content>
   </entry>
   
