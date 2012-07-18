@@ -32,4 +32,4 @@ The cut command is treating spaces as delimiters and is only returning the first
 
 If you want to exclude commits commited (but not necessarily authored) by Adam, you can replace `%an` with `%cn`. This has the same effect as using `git log --committer=Adam` instead of author in the first example but for exclusions.
 
-Don't be afraid to split your piped commands onto multiple lines. As long as a line ends with a pipe, bash knows there is more and will prompt for the next line. You can continue to do this until you have written what you want or pasted a multiline example from an example online. When you search history, it will be recalled as one line with proper semi-colons inserted if you used while loops or other flow control.
+Don't be afraid to split your piped commands onto multiple lines. As long as a line ends with a pipe, bash knows there is more and will prompt for the next line. You can continue to do this until you have written what you want or pasted a multiline snippet from an example online. When you search history, it will be recalled as one line with proper semi-colons inserted if you used while loops or other flow control.
