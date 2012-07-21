@@ -8,6 +8,7 @@ categories:
 - Git
 - MSysGit
 - Script 
+- Bash
 ---
 It's unbelievable the kind of attention something simple can get. I'm still suprised at how many up-votes [this answer](http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits) is getting. 
 
