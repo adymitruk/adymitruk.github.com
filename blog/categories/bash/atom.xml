@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Script | Adam Dymitruk]]></title>
-  <link href="http://www.dymitruk.com/blog/categories/script/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Bash | Adam Dymitruk]]></title>
+  <link href="http://www.dymitruk.com/blog/categories/bash/atom.xml" rel="self"/>
   <link href="http://www.dymitruk.com/"/>
   <updated>2012-07-20T21:35:33-07:00</updated>
   <id>http://www.dymitruk.com/</id>

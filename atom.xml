@@ -4,7 +4,7 @@
   <title><![CDATA[Adam Dymitruk]]></title>
   <link href="http://www.dymitruk.com/atom.xml" rel="self"/>
   <link href="http://www.dymitruk.com/"/>
-  <updated>2012-07-19T23:30:57-07:00</updated>
+  <updated>2012-07-20T21:35:33-07:00</updated>
   <id>http://www.dymitruk.com/</id>
   <author>
     <name><![CDATA[Adam Dymitruk]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Scripting for Fun]]></title>
+    <link href="http://www.dymitruk.com/blog/2012/07/20/scripting-for-fun/"/>
+    <updated>2012-07-20T18:16:00-07:00</updated>
+    <id>http://www.dymitruk.com/blog/2012/07/20/scripting-for-fun</id>
+    <content type="html"><![CDATA[<p><img alt="minecraft" src="http://www.dymitruk.com/images/minecraft.png" style="float:left;margin:0 10px 10px 0" markdown="0" />I&#8217;ve been playing minecraft a couple of nights a week for about 40 minutes each time with my son. This seems to be a trend even for very young children. It wasn&#8217;t too long before I found myself running a server so that we could play together with our friends (We even setup a trello board for our missions and projects!). It&#8217;s much more fun to work together and build something. Discovering new places and building contraptions, houses and other things is very stimulating for a young mind - as well as my old mind. This generation has so much more at their disposal.</p>
+
+<p>Since the 2 teams don&#8217;t play very often, it would be nice to get notifications when one goes online so the other can join. The server has a log file that we can inspect. So I came up with this little script that emails the other team when we log in and vice versa. I also made the same for logging off. This is scripting 101, but most people I know are programmers and don&#8217;t neccessairly dabble in bash.</p>
+
+<pre><code>tail -F /srv/minecraft-server/server.log | 
+  grep --line-buffered 'adymitruk .\* logged in' | 
+  while read line
+  do 
+    echo "Join me if you can." | 
+      mail -s "I just logged in to Minecraft" yourfriend@gmail.com 
+  done &amp;
+</code></pre>
+
+<p>The minecraft log makes it easy to take actions according to what happens in the game. A line gets written saying who logged in and who logged out. Tailing this log and then grepping for those lines, we can send an email. Here&#8217;s how you can <a href="http://ubuntu-tutorials.com/2008/11/11/relaying-postfix-smtp-via-smtpgmailcom/">set up your server to send via gmail</a>.</p>
+
+<!-- more -->
+
+
+<h2>The Details</h2>
+
+<h3>tail</h3>
+
+<p>This command will give you the last 10 lines of a file by default. You can change this if you like. The <code>-F</code> option will make this command never return and keep monitoring the file for changes, even when the file ceases to be readable.</p>
+
+<h3>grep</h3>
+
+<p>This is probably the most well known of linux commands. We are going to filter out lines that only match the regex that we provided. In this case it is looking for the log entry when I log in. You can make this more robust by ensuring the format is more strict. The log in minecraft will log any chat conversations, so a user could spam you with email at this point by chatting a pattern that matches up to this.</p>
+
+<p>Grep will also buffer input before passing it along. This is why we provide the <code>--line-buffered</code> option. It makes sure that the buffering is limited to only one line. If you omit this, grep will appear to be stuck and you will only get an email if you manage to empty the buffer by causing the log to grow by a significant amount.</p>
+
+<h3>while</h3>
+
+<p>We make a never ending while loop to continue to consume the lines that are being piped from grep. You can enter the statements on a single line if you like but would need to insert semicolons after the <code>do</code>, <code>mail</code> and <code>done</code> lines.</p>
+
+<h3>mail</h3>
+
+<p>You can email from the command line by piping the message into the mail command. This is what we have done here. Multiple recipients can be listed as well. In this case we just have one.</p>
+
+<h3>background process</h3>
+
+<p>The &amp; at the end tells the shell to run everything in a background process, freeing up the command line for more instructions. More importantly, the process will be running when you log out of the server and log back in again. If this was a more important process, I would run it as a service instead.</p>
+
+<p>We can see these processes with</p>
+
+<pre><code>ps -Af | grep line-buffered -B 1 -A 1
+</code></pre>
+
+<p>I&#8217;m looking for some text that was unique and was used to launch the 2nd process in our pipe chain. Since it is the 2nd one, we also want the first and 3rd processes. It&#8217;s highly likely that they will be spawned right after one another and get listed one after the other. So we can ask grep to return one line before and one line after the matched line. We will also get this current grep instance as well when we issue the command but we&#8217;ll ignore that:</p>
+
+<pre><code>adam     21847     1  0 Jul16 ?        00:00:00 tail -F /srv/minecraft-server/server.log
+adam     21848     1  0 Jul16 ?        00:00:00 grep --color=auto --line-buffered adymitruk .* logged in
+adam     21849     1  0 Jul16 ?        00:00:00 -bash
+adam     21853     1  0 Jul16 ?        00:00:00 tail -F /srv/minecraft-server/server.log
+adam     21854     1  0 Jul16 ?        00:00:00 grep --color=auto --line-buffered adymitruk lost connection
+adam     21855     1  0 Jul16 ?        00:00:00 -bash
+adam     21856     1  0 Jul16 ?        00:00:00 tail -F /srv/minecraft-server/server.log
+adam     21857     1  0 Jul16 ?        00:00:00 grep --color=auto --line-buffered friend .* logged in
+adam     21858     1  0 Jul16 ?        00:00:00 -bash
+adam     21862     1  0 Jul16 ?        00:00:00 tail -F /srv/minecraft-server/server.log
+adam     21863     1  0 Jul16 ?        00:00:00 grep --color=auto --line-buffered friend lost connection
+adam     21864     1  0 Jul16 ?        00:00:00 -bash
+</code></pre>
+
+<p>If we don&#8217;t want these to run anymore, we can issue the <code>kill</code> command followed by the process id - it&#8217;s the 2nd column.</p>
+
+<h2>Summary</h2>
+
+<p>Linux is a wonderful operating system and has matured quite a lot. It can be a lot of fun too. Especially now that <a href="http://www.co-optimus.com/article/8643/steam-is-coming-to-linux.html">Steam is going to be rolling out on a Linux platform</a>, we should be seeing more games where we can do fun things like this.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Filtering by Author Name]]></title>
