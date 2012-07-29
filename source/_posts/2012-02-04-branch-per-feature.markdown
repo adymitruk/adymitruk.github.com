@@ -11,6 +11,11 @@ categories:
 - Workflow
 - Continuous Integration
 ---
+
+## The Dymitruk Model
+
+Following the methodology defined below is the most effective way to leverage the power of Distributed Version Control Systems - specifically Git. This work is the result of an in depth analysis of Continuous Intergration and the notion of *responsible* Continuous Delivery. The inherent risks that de facto CI and CD introduce are mitigated by what others now refer to as "The Dymitruk Model".
+
 ## Features are small
 
 Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. This was a vicious circle as the feature would diverge further and further from other features or the mainline. Features should be as atomic as possible and your development process should abide by the <a href="http://en.wikipedia.org/wiki/Open/closed_principle">Open Close Principle</a>. Features should be small.
