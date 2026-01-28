@@ -67,7 +67,7 @@ a:hover {
 }
 
 /* Header */
-header {
+body > header {
   background: #333 url('/images/page_header.jpg') no-repeat right center;
   background-size: auto 100%;
   border-bottom: 1px solid var(--border);
