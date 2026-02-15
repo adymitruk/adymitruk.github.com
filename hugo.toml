@@ -1,7 +1,8 @@
-baseURL = 'https://blog.dymitruk.com/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Adam Dymitruk'
 theme = 'PaperMod'
+relativeURLs = true
 
 [markup]
   [markup.goldmark]
@@ -15,13 +16,13 @@ theme = 'PaperMod'
 
 [[menu.main]]
     name = "Posts"
-    url = "posts"
+    url = "/posts/"
     weight = 10
 [[menu.main]]
     name = "Tags"
-    url = "tags"
+    url = "/tags/"
     weight = 20
 [[menu.main]]
     name = "Archives"
-    url = "archives"
+    url = "/archives/"
     weight = 30
