@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Adam Dymitruk</title>
+    <link>https://blog.dymitruk.com/categories/linux/</link>
+    <description>Recent content in Linux on Adam Dymitruk</description>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Jul 2012 18:16:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.dymitruk.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scripting for Fun</title>
+      <link>https://blog.dymitruk.com/posts/2012-07-20-scripting-for-fun/</link>
+      <pubDate>Fri, 20 Jul 2012 18:16:00 +0000</pubDate>
+      <guid>https://blog.dymitruk.com/posts/2012-07-20-scripting-for-fun/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;minecraft&#34; src=&#34;https://blog.dymitruk.com/images/minecraft.png&#34; style=&#34;float:left;margin:0 10px 10px 0&#34; markdown=&#34;0&#34; /&gt;I&amp;rsquo;ve been playing minecraft a couple of nights a week for about 40 minutes each time with my son. This seems to be a trend even for very young children. It wasn&amp;rsquo;t too long before I found myself running a server so that we could play together with our friends (We even setup a trello board for our missions and projects!). It&amp;rsquo;s much more fun to work together and build something. Discovering new places and building contraptions, houses and other things is very stimulating for a young mind - as well as my old mind. This generation has so much more at their disposal.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

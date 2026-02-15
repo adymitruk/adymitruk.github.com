@@ -1,0 +1,76 @@
+---
+layout: post
+title: "Scripting for Fun"
+date: 2012-07-20T18:16:00
+comments: true
+categories: 
+- Bash
+- Fun
+- Script
+- Minecraft
+- Linux
+---
+<img alt="minecraft" src="/images/minecraft.png" style="float:left;margin:0 10px 10px 0" markdown="0" />I've been playing minecraft a couple of nights a week for about 40 minutes each time with my son. This seems to be a trend even for very young children. It wasn't too long before I found myself running a server so that we could play together with our friends (We even setup a trello board for our missions and projects!). It's much more fun to work together and build something. Discovering new places and building contraptions, houses and other things is very stimulating for a young mind - as well as my old mind. This generation has so much more at their disposal.
+
+Since the 2 teams don't play very often, it would be nice to get notifications when one goes online so the other can join. The server has a log file that we can inspect. So I came up with this little script that emails the other team when we log in and vice versa. I also made the same for logging off. This is scripting 101, but most people I know are programmers and don't neccessairly dabble in bash.
+
+    tail -F /srv/minecraft-server/server.log | 
+      grep --line-buffered 'adymitruk .\* logged in' | 
+      while read line
+      do 
+        echo "Join me if you can." | 
+          mail -s "I just logged in to Minecraft" yourfriend@gmail.com 
+      done &
+
+The minecraft log makes it easy to take actions according to what happens in the game. A line gets written saying who logged in and who logged out. Tailing this log and then grepping for those lines, we can send an email. Here's how you can [set up your server to send via gmail](http://ubuntu-tutorials.com/2008/11/11/relaying-postfix-smtp-via-smtpgmailcom/).
+
+<!-- more -->
+
+## The Details
+
+### tail
+
+This command will give you the last 10 lines of a file by default. You can change this if you like. The `-F` option will make this command never return and keep monitoring the file for changes, even when the file ceases to be readable.
+
+### grep
+
+This is probably the most well known of linux commands. We are going to filter out lines that only match the regex that we provided. In this case it is looking for the log entry when I log in. You can make this more robust by ensuring the format is more strict. The log in minecraft will log any chat conversations, so a user could spam you with email at this point by chatting a pattern that matches up to this.
+
+Grep will also buffer input before passing it along. This is why we provide the `--line-buffered` option. It makes sure that the buffering is limited to only one line. If you omit this, grep will appear to be stuck and you will only get an email if you manage to empty the buffer by causing the log to grow by a significant amount.
+
+### while
+
+We make a never ending while loop to continue to consume the lines that are being piped from grep. You can enter the statements on a single line if you like but would need to insert semicolons after the `do`, `mail` and `done` lines.
+
+### mail
+
+You can email from the command line by piping the message into the mail command. This is what we have done here. Multiple recipients can be listed as well. In this case we just have one.
+
+### background process
+
+The &amp; at the end tells the shell to run everything in a background process, freeing up the command line for more instructions. More importantly, the process will be running when you log out of the server and log back in again. If this was a more important process, I would run it as a service instead.
+
+We can see these processes with
+
+    ps -Af | grep line-buffered -B 1 -A 1
+
+I'm looking for some text that was unique and was used to launch the 2nd process in our pipe chain. Since it is the 2nd one, we also want the first and 3rd processes. It's highly likely that they will be spawned right after one another and get listed one after the other. So we can ask grep to return one line before and one line after the matched line. We will also get this current grep instance as well when we issue the command but we'll ignore that:
+
+    adam     21847     1  0 Jul16 ?        00:00:00 tail -F /srv/minecraft-server/server.log
+    adam     21848     1  0 Jul16 ?        00:00:00 grep --color=auto --line-buffered adymitruk .* logged in
+    adam     21849     1  0 Jul16 ?        00:00:00 -bash
+    adam     21853     1  0 Jul16 ?        00:00:00 tail -F /srv/minecraft-server/server.log
+    adam     21854     1  0 Jul16 ?        00:00:00 grep --color=auto --line-buffered adymitruk lost connection
+    adam     21855     1  0 Jul16 ?        00:00:00 -bash
+    adam     21856     1  0 Jul16 ?        00:00:00 tail -F /srv/minecraft-server/server.log
+    adam     21857     1  0 Jul16 ?        00:00:00 grep --color=auto --line-buffered friend .* logged in
+    adam     21858     1  0 Jul16 ?        00:00:00 -bash
+    adam     21862     1  0 Jul16 ?        00:00:00 tail -F /srv/minecraft-server/server.log
+    adam     21863     1  0 Jul16 ?        00:00:00 grep --color=auto --line-buffered friend lost connection
+    adam     21864     1  0 Jul16 ?        00:00:00 -bash
+
+If we don't want these to run anymore, we can issue the `kill` command followed by the process id - it's the 2nd column.
+
+## Summary
+
+Linux is a wonderful operating system and has matured quite a lot. It can be a lot of fun too. Especially now that [Steam is going to be rolling out on a Linux platform](http://www.co-optimus.com/article/8643/steam-is-coming-to-linux.html), we should be seeing more games where we can do fun things like this.

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Adam Dymitruk</title>
+    <link>https://blog.dymitruk.com/</link>
+    <description>Recent content on Adam Dymitruk</description>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Jul 2012 18:16:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.dymitruk.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scripting for Fun</title>
+      <link>https://blog.dymitruk.com/posts/2012-07-20-scripting-for-fun/</link>
+      <pubDate>Fri, 20 Jul 2012 18:16:00 +0000</pubDate>
+      <guid>https://blog.dymitruk.com/posts/2012-07-20-scripting-for-fun/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;minecraft&#34; src=&#34;https://blog.dymitruk.com/images/minecraft.png&#34; style=&#34;float:left;margin:0 10px 10px 0&#34; markdown=&#34;0&#34; /&gt;I&amp;rsquo;ve been playing minecraft a couple of nights a week for about 40 minutes each time with my son. This seems to be a trend even for very young children. It wasn&amp;rsquo;t too long before I found myself running a server so that we could play together with our friends (We even setup a trello board for our missions and projects!). It&amp;rsquo;s much more fun to work together and build something. Discovering new places and building contraptions, houses and other things is very stimulating for a young mind - as well as my old mind. This generation has so much more at their disposal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Filtering by Author Name</title>
+      <link>https://blog.dymitruk.com/posts/2012-07-18-filtering-by-author-name/</link>
+      <pubDate>Wed, 18 Jul 2012 00:46:00 +0000</pubDate>
+      <guid>https://blog.dymitruk.com/posts/2012-07-18-filtering-by-author-name/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s unbelievable the kind of attention something simple can get. I&amp;rsquo;m still suprised at how many up-votes &lt;a href=&#34;http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits&#34;&gt;this answer&lt;/a&gt; is getting.&lt;/p&gt;
+&lt;p&gt;In Git, filtering by author name is easy. Most people simply use the name of the committer that they are interested in. However, it&amp;rsquo;s a little more powerful due to the fact that the author option on git log is actually interpreted as regex. So for looking for commits by &amp;ldquo;Adam Dymitruk&amp;rdquo; it&amp;rsquo;s easier to just type &lt;code&gt;git log --author=&amp;quot;Adam&amp;quot;&lt;/code&gt; or use the last name if there more contributors with the same first name.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NDC Oslo</title>
+      <link>https://blog.dymitruk.com/posts/2012-06-09-ndc-oslo/</link>
+      <pubDate>Sat, 09 Jun 2012 23:15:00 +0000</pubDate>
+      <guid>https://blog.dymitruk.com/posts/2012-06-09-ndc-oslo/</guid>
+      <description>&lt;h2 id=&#34;continuous-tests-is-free&#34;&gt;Continuous Tests is Free!&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;Mighty Moose logo&#34; loading=&#34;lazy&#34; src=&#34;https://blog.dymitruk.com/images/mightymoose.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event with many excellent presentations and post conference get-togethers. The highlight of this conference for me was the announcement that &lt;a href=&#34;http://www.continuoustests.com&#34; title=&#34;Continuous Tests&#34;&gt;Continuous Tests aka Mighty Moose&lt;/a&gt; is now free! If you&amp;rsquo;ve been keeping up with the conference on twitter, you may have noticed the controversy that the Azure announcement caused. I also didn&amp;rsquo;t like the use of profanity in the keynote and more mentions of Steve Jobs, but that&amp;rsquo;s a small part. Aral had me in stitches with all the usability (or there lack of) issues found in our world. My criticism of those 2 things caused Aral to block me on Twitter - I guess some people have thin skin. Don&amp;rsquo;t let the Azure slip up take away from an excellent conference. Download all the presentations and watch them.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Branch-per-Feature</title>
+      <link>https://blog.dymitruk.com/posts/2012-02-05-branch-per-feature/</link>
+      <pubDate>Sun, 05 Feb 2012 22:38:00 +0000</pubDate>
+      <guid>https://blog.dymitruk.com/posts/2012-02-05-branch-per-feature/</guid>
+      <description>&lt;h2 id=&#34;the-dymitruk-model&#34;&gt;The Dymitruk Model&lt;/h2&gt;
+&lt;p&gt;Following the methodology defined below is the most effective way to leverage the power of Distributed Version Control Systems - specifically Git. This work is the result of an in depth analysis of Continuous Intergration and the notion of &lt;em&gt;responsible&lt;/em&gt; Continuous Delivery. The inherent risks that de facto CI and CD introduce are mitigated by what others now refer to as &amp;ldquo;The Dymitruk Model&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;features-are-small&#34;&gt;Features are small&lt;/h2&gt;
+&lt;p&gt;Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. This was a vicious circle as the feature would diverge further and further from other features or the mainline. Features should be as atomic as possible and your development process should abide by the &lt;a href=&#34;http://en.wikipedia.org/wiki/Open/closed_principle&#34;&gt;Open Close Principle&lt;/a&gt;. Features should be small.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Fresh Start: Octopress Provides the Tooling for Blogging</title>
+      <link>https://blog.dymitruk.com/posts/2012-01-25-a-fresh-start/</link>
+      <pubDate>Wed, 25 Jan 2012 22:03:00 +0000</pubDate>
+      <guid>https://blog.dymitruk.com/posts/2012-01-25-a-fresh-start/</guid>
+      <description>&lt;img src=&#34;https://blog.dymitruk.com/images/cat-edit.jpg&#34; /&gt;
+&lt;p&gt;This is the first post using Octopress (I have been editing it though to get some things working). So far it&amp;rsquo;s awesome. I&amp;rsquo;ll have more to show soon. Look for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Import old posts from adventuresinagile.blogspot.com&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Customize the front page to include my password hasher.&lt;/del&gt; My password generator is &lt;a href=&#34;https://blog.dymitruk.com/password.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Articles and other demo stuff&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

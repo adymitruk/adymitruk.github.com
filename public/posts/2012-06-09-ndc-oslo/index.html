@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>NDC Oslo | Adam Dymitruk</title>
+<meta name="keywords" content="">
+<meta name="description" content="Continuous Tests is Free!
+
+Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event with many excellent presentations and post conference get-togethers. The highlight of this conference for me was the announcement that Continuous Tests aka Mighty Moose is now free! If you&rsquo;ve been keeping up with the conference on twitter, you may have noticed the controversy that the Azure announcement caused. I also didn&rsquo;t like the use of profanity in the keynote and more mentions of Steve Jobs, but that&rsquo;s a small part. Aral had me in stitches with all the usability (or there lack of) issues found in our world. My criticism of those 2 things caused Aral to block me on Twitter - I guess some people have thin skin. Don&rsquo;t let the Azure slip up take away from an excellent conference. Download all the presentations and watch them.">
+<meta name="author" content="Adam Dymitruk">
+<link rel="canonical" href="https://blog.dymitruk.com/posts/2012-06-09-ndc-oslo/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c2189e7d36d72767de292f8b9d897e4a464aa5bc7eb692cda50064f5eb9eeece.css" integrity="sha256-whiefTbXJ2feKS&#43;LnYl&#43;SkZKpbx&#43;tpLNpQBk9eue7s4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://blog.dymitruk.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blog.dymitruk.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.dymitruk.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blog.dymitruk.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blog.dymitruk.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://blog.dymitruk.com/posts/2012-06-09-ndc-oslo/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://blog.dymitruk.com/posts/2012-06-09-ndc-oslo/">
+  <meta property="og:site_name" content="Adam Dymitruk">
+  <meta property="og:title" content="NDC Oslo">
+  <meta property="og:description" content="Continuous Tests is Free! Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event with many excellent presentations and post conference get-togethers. The highlight of this conference for me was the announcement that Continuous Tests aka Mighty Moose is now free! If you’ve been keeping up with the conference on twitter, you may have noticed the controversy that the Azure announcement caused. I also didn’t like the use of profanity in the keynote and more mentions of Steve Jobs, but that’s a small part. Aral had me in stitches with all the usability (or there lack of) issues found in our world. My criticism of those 2 things caused Aral to block me on Twitter - I guess some people have thin skin. Don’t let the Azure slip up take away from an excellent conference. Download all the presentations and watch them.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2012-06-09T23:15:00+00:00">
+    <meta property="article:modified_time" content="2012-06-09T23:15:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NDC Oslo">
+<meta name="twitter:description" content="Continuous Tests is Free!
+
+Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event with many excellent presentations and post conference get-togethers. The highlight of this conference for me was the announcement that Continuous Tests aka Mighty Moose is now free! If you&rsquo;ve been keeping up with the conference on twitter, you may have noticed the controversy that the Azure announcement caused. I also didn&rsquo;t like the use of profanity in the keynote and more mentions of Steve Jobs, but that&rsquo;s a small part. Aral had me in stitches with all the usability (or there lack of) issues found in our world. My criticism of those 2 things caused Aral to block me on Twitter - I guess some people have thin skin. Don&rsquo;t let the Azure slip up take away from an excellent conference. Download all the presentations and watch them.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://blog.dymitruk.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "NDC Oslo",
+      "item": "https://blog.dymitruk.com/posts/2012-06-09-ndc-oslo/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "NDC Oslo",
+  "name": "NDC Oslo",
+  "description": "Continuous Tests is Free! Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event with many excellent presentations and post conference get-togethers. The highlight of this conference for me was the announcement that Continuous Tests aka Mighty Moose is now free! If you\u0026rsquo;ve been keeping up with the conference on twitter, you may have noticed the controversy that the Azure announcement caused. I also didn\u0026rsquo;t like the use of profanity in the keynote and more mentions of Steve Jobs, but that\u0026rsquo;s a small part. Aral had me in stitches with all the usability (or there lack of) issues found in our world. My criticism of those 2 things caused Aral to block me on Twitter - I guess some people have thin skin. Don\u0026rsquo;t let the Azure slip up take away from an excellent conference. Download all the presentations and watch them.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Continuous Tests is Free! Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event with many excellent presentations and post conference get-togethers. The highlight of this conference for me was the announcement that Continuous Tests aka Mighty Moose is now free! If you’ve been keeping up with the conference on twitter, you may have noticed the controversy that the Azure announcement caused. I also didn’t like the use of profanity in the keynote and more mentions of Steve Jobs, but that’s a small part. Aral had me in stitches with all the usability (or there lack of) issues found in our world. My criticism of those 2 things caused Aral to block me on Twitter - I guess some people have thin skin. Don’t let the Azure slip up take away from an excellent conference. Download all the presentations and watch them.\nMy presentation was about the previous post on this blog – a lesson in branch-per-feature as experienced by one company. I’ll be reworking the presentation to be less wordy and will post the slides here. The talk is very similar to the one I gave at Vancouver Techfest in late April. I was amazed at the number of people that attended. Presenting at the same time as me was Dan North and I really wish I could have been there for his talk. Beforehand he and I were joking about how we wanted to take our audience to other talks that we thought were better than our own!\nAs with any conference that I attend, the true benefit is the ability to sit with the attendees and speakers alike over dinner or drinks. I had a chance to catch up with Greg Young, Michael Feathers, Udi Dahan, Dan North and many others. I met a number of people that I knew already from Twitter such as Rob Conery, Rob Ashton, Ashic, Krzyshtof Kozmic to name a few. There is a number of great Swedes, Danes and Norwegians that I had the pleasure to meet and connect with. The discussions were really insightful and were full of content you just couldn’t get from a presentation.\nOn my last day there I took an opportunity to see a little bit of the city and included seeing the Botanical Gardens, Museum of Natural History, Museum of Geology and the Vigeland Statue Park. The botanical gardens and museums were to the east of central station while Vigeland park was to the west. This showed a great contrast between the poor and the well-off in Oslo as you walked the streets.\n",
+  "wordCount" : "439",
+  "inLanguage": "en",
+  "datePublished": "2012-06-09T23:15:00Z",
+  "dateModified": "2012-06-09T23:15:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Adam Dymitruk"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.dymitruk.com/posts/2012-06-09-ndc-oslo/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Adam Dymitruk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.dymitruk.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blog.dymitruk.com/" accesskey="h" title="Adam Dymitruk (Alt + H)">Adam Dymitruk</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://blog.dymitruk.com/posts" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.dymitruk.com/tags" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.dymitruk.com/archives" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      NDC Oslo
+    </h1>
+    <div class="post-meta"><span title='2012-06-09 23:15:00 +0000 UTC'>June 9, 2012</span>&nbsp;·&nbsp;<span>Adam Dymitruk</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="continuous-tests-is-free">Continuous Tests is Free!<a hidden class="anchor" aria-hidden="true" href="#continuous-tests-is-free">#</a></h2>
+<p><img alt="Mighty Moose logo" loading="lazy" src="/images/mightymoose.png"></p>
+<p>Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event with many excellent presentations and post conference get-togethers. The highlight of this conference for me was the announcement that <a href="http://www.continuoustests.com" title="Continuous Tests">Continuous Tests aka Mighty Moose</a> is now free! If you&rsquo;ve been keeping up with the conference on twitter, you may have noticed the controversy that the Azure announcement caused. I also didn&rsquo;t like the use of profanity in the keynote and more mentions of Steve Jobs, but that&rsquo;s a small part. Aral had me in stitches with all the usability (or there lack of) issues found in our world. My criticism of those 2 things caused Aral to block me on Twitter - I guess some people have thin skin. Don&rsquo;t let the Azure slip up take away from an excellent conference. Download all the presentations and watch them.</p>
+<!-- more -->
+<p>My presentation was about the previous post on this blog – a lesson in branch-per-feature as experienced by one company. I&rsquo;ll be reworking the presentation to be less wordy and will post the slides here. The talk is very similar to the one I gave at Vancouver Techfest in late April. I was amazed at the number of people that attended. Presenting at the same time as me was Dan North and I really wish I could have been there for his talk. Beforehand he and I were joking about how we wanted to take our audience to other talks that we thought were better than our own!</p>
+<p>As with any conference that I attend, the true benefit is the ability to sit with the attendees and speakers alike over dinner or drinks. I had a chance to catch up with Greg Young, Michael Feathers, Udi Dahan, Dan North and many others.  I met a number of people that I knew already from Twitter such as Rob Conery, Rob Ashton, Ashic, Krzyshtof Kozmic to name a few. There is a number of great Swedes, Danes and Norwegians that I had the pleasure to meet and connect with. The discussions were really insightful and were full of content you just couldn&rsquo;t get from a presentation.</p>
+<p>On my last day there I took an opportunity to see a little bit of the city and included seeing the Botanical Gardens, Museum of Natural History, Museum of Geology and the Vigeland Statue Park. The botanical gardens and museums were to the east of central station while Vigeland park was to the west. This showed a great contrast between the poor and the well-off in Oslo as you walked the streets.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://blog.dymitruk.com/">Adam Dymitruk</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

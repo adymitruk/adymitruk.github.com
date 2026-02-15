@@ -1,0 +1,27 @@
+baseURL = 'https://blog.dymitruk.com/'
+languageCode = 'en-us'
+title = 'Adam Dymitruk'
+theme = 'PaperMod'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+    description = "Building Great Software"
+    author = "Adam Dymitruk"
+    showCodeCopyButtons = true
+
+[[menu.main]]
+    name = "Posts"
+    url = "posts"
+    weight = 10
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 20
+[[menu.main]]
+    name = "Archives"
+    url = "archives"
+    weight = 30
