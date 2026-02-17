@@ -2,75 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.dymitruk.com/</loc>
+    <loc>/</loc>
+    <lastmod>2026-02-17T08:17:44+00:00</lastmod>
+  </url><url>
+    <loc>/posts/2026-02-17-back-to-blogging/</loc>
+    <lastmod>2026-02-17T08:17:44+00:00</lastmod>
+  </url><url>
+    <loc>/tags/blogging/</loc>
+    <lastmod>2026-02-17T08:17:44+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2026-02-17T08:17:44+00:00</lastmod>
+  </url><url>
+    <loc>/categories/meta/</loc>
+    <lastmod>2026-02-17T08:17:44+00:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2026-02-17T08:17:44+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2026-02-17T08:17:44+00:00</lastmod>
+  </url><url>
+    <loc>/tags/update/</loc>
+    <lastmod>2026-02-17T08:17:44+00:00</lastmod>
+  </url><url>
+    <loc>/categories/bash/</loc>
     <lastmod>2012-07-20T18:16:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/bash/</loc>
+    <loc>/categories/fun/</loc>
     <lastmod>2012-07-20T18:16:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/</loc>
+    <loc>/categories/linux/</loc>
     <lastmod>2012-07-20T18:16:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/fun/</loc>
+    <loc>/categories/minecraft/</loc>
     <lastmod>2012-07-20T18:16:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/linux/</loc>
+    <loc>/categories/script/</loc>
     <lastmod>2012-07-20T18:16:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/minecraft/</loc>
+    <loc>/posts/2012-07-20-scripting-for-fun/</loc>
     <lastmod>2012-07-20T18:16:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/posts/</loc>
-    <lastmod>2012-07-20T18:16:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.dymitruk.com/categories/script/</loc>
-    <lastmod>2012-07-20T18:16:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.dymitruk.com/posts/2012-07-20-scripting-for-fun/</loc>
-    <lastmod>2012-07-20T18:16:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.dymitruk.com/posts/2012-07-18-filtering-by-author-name/</loc>
+    <loc>/posts/2012-07-18-filtering-by-author-name/</loc>
     <lastmod>2012-07-18T00:46:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/git/</loc>
+    <loc>/categories/git/</loc>
     <lastmod>2012-07-18T00:46:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/git-log/</loc>
+    <loc>/categories/git-log/</loc>
     <lastmod>2012-07-18T00:46:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/msysgit/</loc>
+    <loc>/categories/msysgit/</loc>
     <lastmod>2012-07-18T00:46:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/conference/</loc>
+    <loc>/categories/conference/</loc>
     <lastmod>2012-06-09T23:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/dotnet/</loc>
+    <loc>/categories/dotnet/</loc>
     <lastmod>2012-06-09T23:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/posts/2012-06-09-ndc-oslo/</loc>
+    <loc>/posts/2012-06-09-ndc-oslo/</loc>
     <lastmod>2012-06-09T23:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/posts/2012-02-05-branch-per-feature/</loc>
+    <loc>/posts/2012-02-05-branch-per-feature/</loc>
     <lastmod>2012-02-05T22:38:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/branching/</loc>
+    <loc>/categories/branching/</loc>
     <lastmod>2012-02-05T22:38:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/continuous-integration/</loc>
+    <loc>/categories/continuous-integration/</loc>
     <lastmod>2012-02-05T22:38:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/dvcs/</loc>
+    <loc>/categories/dvcs/</loc>
     <lastmod>2012-02-05T22:38:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/merging/</loc>
+    <loc>/categories/merging/</loc>
     <lastmod>2012-02-05T22:38:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/categories/workflow/</loc>
+    <loc>/categories/workflow/</loc>
     <lastmod>2012-02-05T22:38:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dymitruk.com/posts/2012-01-25-a-fresh-start/</loc>
+    <loc>/posts/2012-01-25-a-fresh-start/</loc>
     <lastmod>2012-01-25T22:03:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.dymitruk.com/tags/</loc>
   </url>
 </urlset>

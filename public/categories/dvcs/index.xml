@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DVCS on Adam Dymitruk</title>
-    <link>https://blog.dymitruk.com/categories/dvcs/</link>
+    <link>/categories/dvcs/</link>
     <description>Recent content in DVCS on Adam Dymitruk</description>
-    <generator>Hugo -- 0.147.5</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Feb 2012 22:38:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.dymitruk.com/categories/dvcs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/dvcs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Branch-per-Feature</title>
-      <link>https://blog.dymitruk.com/posts/2012-02-05-branch-per-feature/</link>
+      <link>/posts/2012-02-05-branch-per-feature/</link>
       <pubDate>Sun, 05 Feb 2012 22:38:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/posts/2012-02-05-branch-per-feature/</guid>
-      <description>&lt;h2 id=&#34;the-dymitruk-model&#34;&gt;The Dymitruk Model&lt;/h2&gt;
-&lt;p&gt;Following the methodology defined below is the most effective way to leverage the power of Distributed Version Control Systems - specifically Git. This work is the result of an in depth analysis of Continuous Intergration and the notion of &lt;em&gt;responsible&lt;/em&gt; Continuous Delivery. The inherent risks that de facto CI and CD introduce are mitigated by what others now refer to as &amp;ldquo;The Dymitruk Model&amp;rdquo;.&lt;/p&gt;
-&lt;h2 id=&#34;features-are-small&#34;&gt;Features are small&lt;/h2&gt;
-&lt;p&gt;Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. This was a vicious circle as the feature would diverge further and further from other features or the mainline. Features should be as atomic as possible and your development process should abide by the &lt;a href=&#34;http://en.wikipedia.org/wiki/Open/closed_principle&#34;&gt;Open Close Principle&lt;/a&gt;. Features should be small.&lt;/p&gt;</description>
+      <guid>/posts/2012-02-05-branch-per-feature/</guid>
+      <description>&lt;h2 id=&#34;the-dymitruk-model&#34;&gt;The Dymitruk Model&lt;/h2&gt;&#xA;&lt;p&gt;Following the methodology defined below is the most effective way to leverage the power of Distributed Version Control Systems - specifically Git. This work is the result of an in depth analysis of Continuous Intergration and the notion of &lt;em&gt;responsible&lt;/em&gt; Continuous Delivery. The inherent risks that de facto CI and CD introduce are mitigated by what others now refer to as &amp;ldquo;The Dymitruk Model&amp;rdquo;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features-are-small&#34;&gt;Features are small&lt;/h2&gt;&#xA;&lt;p&gt;Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. This was a vicious circle as the feature would diverge further and further from other features or the mainline. Features should be as atomic as possible and your development process should abide by the &lt;a href=&#34;http://en.wikipedia.org/wiki/Open/closed_principle&#34;&gt;Open Close Principle&lt;/a&gt;. Features should be small.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

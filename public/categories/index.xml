@@ -1,116 +1,123 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Adam Dymitruk</title>
-    <link>https://blog.dymitruk.com/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Adam Dymitruk</description>
-    <generator>Hugo -- 0.147.5</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jul 2012 18:16:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.dymitruk.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Feb 2026 08:17:44 +0000</lastBuildDate>
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Meta</title>
+      <link>/categories/meta/</link>
+      <pubDate>Tue, 17 Feb 2026 08:17:44 +0000</pubDate>
+      <guid>/categories/meta/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Bash</title>
-      <link>https://blog.dymitruk.com/categories/bash/</link>
+      <link>/categories/bash/</link>
       <pubDate>Fri, 20 Jul 2012 18:16:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/bash/</guid>
+      <guid>/categories/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Fun</title>
-      <link>https://blog.dymitruk.com/categories/fun/</link>
+      <link>/categories/fun/</link>
       <pubDate>Fri, 20 Jul 2012 18:16:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/fun/</guid>
+      <guid>/categories/fun/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://blog.dymitruk.com/categories/linux/</link>
+      <link>/categories/linux/</link>
       <pubDate>Fri, 20 Jul 2012 18:16:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/linux/</guid>
+      <guid>/categories/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Minecraft</title>
-      <link>https://blog.dymitruk.com/categories/minecraft/</link>
+      <link>/categories/minecraft/</link>
       <pubDate>Fri, 20 Jul 2012 18:16:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/minecraft/</guid>
+      <guid>/categories/minecraft/</guid>
       <description></description>
     </item>
     <item>
       <title>Script</title>
-      <link>https://blog.dymitruk.com/categories/script/</link>
+      <link>/categories/script/</link>
       <pubDate>Fri, 20 Jul 2012 18:16:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/script/</guid>
+      <guid>/categories/script/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://blog.dymitruk.com/categories/git/</link>
+      <link>/categories/git/</link>
       <pubDate>Wed, 18 Jul 2012 00:46:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/git/</guid>
+      <guid>/categories/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Git-Log</title>
-      <link>https://blog.dymitruk.com/categories/git-log/</link>
+      <link>/categories/git-log/</link>
       <pubDate>Wed, 18 Jul 2012 00:46:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/git-log/</guid>
+      <guid>/categories/git-log/</guid>
       <description></description>
     </item>
     <item>
       <title>MSysGit</title>
-      <link>https://blog.dymitruk.com/categories/msysgit/</link>
+      <link>/categories/msysgit/</link>
       <pubDate>Wed, 18 Jul 2012 00:46:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/msysgit/</guid>
+      <guid>/categories/msysgit/</guid>
       <description></description>
     </item>
     <item>
       <title>Conference</title>
-      <link>https://blog.dymitruk.com/categories/conference/</link>
+      <link>/categories/conference/</link>
       <pubDate>Sat, 09 Jun 2012 23:15:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/conference/</guid>
+      <guid>/categories/conference/</guid>
       <description></description>
     </item>
     <item>
       <title>DotNet</title>
-      <link>https://blog.dymitruk.com/categories/dotnet/</link>
+      <link>/categories/dotnet/</link>
       <pubDate>Sat, 09 Jun 2012 23:15:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/dotnet/</guid>
+      <guid>/categories/dotnet/</guid>
       <description></description>
     </item>
     <item>
       <title>Branching</title>
-      <link>https://blog.dymitruk.com/categories/branching/</link>
+      <link>/categories/branching/</link>
       <pubDate>Sun, 05 Feb 2012 22:38:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/branching/</guid>
+      <guid>/categories/branching/</guid>
       <description></description>
     </item>
     <item>
       <title>Continuous Integration</title>
-      <link>https://blog.dymitruk.com/categories/continuous-integration/</link>
+      <link>/categories/continuous-integration/</link>
       <pubDate>Sun, 05 Feb 2012 22:38:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/continuous-integration/</guid>
+      <guid>/categories/continuous-integration/</guid>
       <description></description>
     </item>
     <item>
       <title>DVCS</title>
-      <link>https://blog.dymitruk.com/categories/dvcs/</link>
+      <link>/categories/dvcs/</link>
       <pubDate>Sun, 05 Feb 2012 22:38:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/dvcs/</guid>
+      <guid>/categories/dvcs/</guid>
       <description></description>
     </item>
     <item>
       <title>Merging</title>
-      <link>https://blog.dymitruk.com/categories/merging/</link>
+      <link>/categories/merging/</link>
       <pubDate>Sun, 05 Feb 2012 22:38:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/merging/</guid>
+      <guid>/categories/merging/</guid>
       <description></description>
     </item>
     <item>
       <title>Workflow</title>
-      <link>https://blog.dymitruk.com/categories/workflow/</link>
+      <link>/categories/workflow/</link>
       <pubDate>Sun, 05 Feb 2012 22:38:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/categories/workflow/</guid>
+      <guid>/categories/workflow/</guid>
       <description></description>
     </item>
   </channel>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git-Log on Adam Dymitruk</title>
-    <link>https://blog.dymitruk.com/categories/git-log/</link>
+    <link>/categories/git-log/</link>
     <description>Recent content in Git-Log on Adam Dymitruk</description>
-    <generator>Hugo -- 0.147.5</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Jul 2012 00:46:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.dymitruk.com/categories/git-log/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/git-log/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Filtering by Author Name</title>
-      <link>https://blog.dymitruk.com/posts/2012-07-18-filtering-by-author-name/</link>
+      <link>/posts/2012-07-18-filtering-by-author-name/</link>
       <pubDate>Wed, 18 Jul 2012 00:46:00 +0000</pubDate>
-      <guid>https://blog.dymitruk.com/posts/2012-07-18-filtering-by-author-name/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s unbelievable the kind of attention something simple can get. I&amp;rsquo;m still suprised at how many up-votes &lt;a href=&#34;http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits&#34;&gt;this answer&lt;/a&gt; is getting.&lt;/p&gt;
-&lt;p&gt;In Git, filtering by author name is easy. Most people simply use the name of the committer that they are interested in. However, it&amp;rsquo;s a little more powerful due to the fact that the author option on git log is actually interpreted as regex. So for looking for commits by &amp;ldquo;Adam Dymitruk&amp;rdquo; it&amp;rsquo;s easier to just type &lt;code&gt;git log --author=&amp;quot;Adam&amp;quot;&lt;/code&gt; or use the last name if there more contributors with the same first name.&lt;/p&gt;</description>
+      <guid>/posts/2012-07-18-filtering-by-author-name/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s unbelievable the kind of attention something simple can get. I&amp;rsquo;m still suprised at how many up-votes &lt;a href=&#34;http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits&#34;&gt;this answer&lt;/a&gt; is getting.&lt;/p&gt;&#xA;&lt;p&gt;In Git, filtering by author name is easy. Most people simply use the name of the committer that they are interested in. However, it&amp;rsquo;s a little more powerful due to the fact that the author option on git log is actually interpreted as regex. So for looking for commits by &amp;ldquo;Adam Dymitruk&amp;rdquo; it&amp;rsquo;s easier to just type &lt;code&gt;git log --author=&amp;quot;Adam&amp;quot;&lt;/code&gt; or use the last name if there more contributors with the same first name.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
