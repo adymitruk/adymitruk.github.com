@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Adam Dymitruk</title>
     <link>/posts/</link>
     <description>Recent content in Posts on Adam Dymitruk</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Feb 2026 08:17:44 +0000</lastBuildDate>
     <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,10 @@
       <link>/posts/2026-02-17-back-to-blogging/</link>
       <pubDate>Tue, 17 Feb 2026 08:17:44 +0000</pubDate>
       <guid>/posts/2026-02-17-back-to-blogging/</guid>
-      <description>&lt;p&gt;After a long hiatus, I&amp;rsquo;m starting to blog again.&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s been over a decade since my last post, and a lot has changed. The world has evolved, technology has leaped forward, and I&amp;rsquo;ve had countless experiences worth sharing. But some things remain constant — the value of writing down your thoughts, sharing knowledge, and connecting with others who are navigating similar challenges.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve migrated the blog to Hugo with the PaperMod theme. The old Octopress setup served me well, but it was time for something cleaner and more maintainable. You can still find the old version at dymitruk.com, but this new iteration at blog.dymitruk.com is where I&amp;rsquo;ll be posting going forward.&lt;/p&gt;</description>
+      <description>&lt;p&gt;After a long hiatus, I&amp;rsquo;m starting to blog again.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s been over a decade since my last post, and a lot has changed. The world has evolved, technology has leaped forward, and I&amp;rsquo;ve had countless experiences worth sharing. But some things remain constant — the value of writing down your thoughts, sharing knowledge, and connecting with others who are navigating similar challenges.&lt;/p&gt;
+&lt;h2 id=&#34;event-modelings-journey&#34;&gt;Event Modeling&amp;rsquo;s Journey&lt;/h2&gt;
+&lt;p&gt;Since introducing &lt;a href=&#34;https://eventmodeling.org/&#34;&gt;Event Modeling&lt;/a&gt; in 2018, I&amp;rsquo;ve watched it grow from a workshop technique into a global methodology used by teams worldwide. What started as a way to bridge communication between developers and domain experts has become a fundamental approach to designing information systems.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Scripting for Fun</title>
@@ -27,28 +30,40 @@
       <link>/posts/2012-07-18-filtering-by-author-name/</link>
       <pubDate>Wed, 18 Jul 2012 00:46:00 +0000</pubDate>
       <guid>/posts/2012-07-18-filtering-by-author-name/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s unbelievable the kind of attention something simple can get. I&amp;rsquo;m still suprised at how many up-votes &lt;a href=&#34;http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits&#34;&gt;this answer&lt;/a&gt; is getting.&lt;/p&gt;&#xA;&lt;p&gt;In Git, filtering by author name is easy. Most people simply use the name of the committer that they are interested in. However, it&amp;rsquo;s a little more powerful due to the fact that the author option on git log is actually interpreted as regex. So for looking for commits by &amp;ldquo;Adam Dymitruk&amp;rdquo; it&amp;rsquo;s easier to just type &lt;code&gt;git log --author=&amp;quot;Adam&amp;quot;&lt;/code&gt; or use the last name if there more contributors with the same first name.&lt;/p&gt;</description>
+      <description>&lt;p&gt;It&amp;rsquo;s unbelievable the kind of attention something simple can get. I&amp;rsquo;m still suprised at how many up-votes &lt;a href=&#34;http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits&#34;&gt;this answer&lt;/a&gt; is getting.&lt;/p&gt;
+&lt;p&gt;In Git, filtering by author name is easy. Most people simply use the name of the committer that they are interested in. However, it&amp;rsquo;s a little more powerful due to the fact that the author option on git log is actually interpreted as regex. So for looking for commits by &amp;ldquo;Adam Dymitruk&amp;rdquo; it&amp;rsquo;s easier to just type &lt;code&gt;git log --author=&amp;quot;Adam&amp;quot;&lt;/code&gt; or use the last name if there more contributors with the same first name.&lt;/p&gt;</description>
     </item>
     <item>
       <title>NDC Oslo</title>
       <link>/posts/2012-06-09-ndc-oslo/</link>
       <pubDate>Sat, 09 Jun 2012 23:15:00 +0000</pubDate>
       <guid>/posts/2012-06-09-ndc-oslo/</guid>
-      <description>&lt;h2 id=&#34;continuous-tests-is-free&#34;&gt;Continuous Tests is Free!&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../images/mightymoose.png&#34; alt=&#34;Mighty Moose logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event with many excellent presentations and post conference get-togethers. The highlight of this conference for me was the announcement that &lt;a href=&#34;http://www.continuoustests.com&#34; title=&#34;Continuous Tests&#34;&gt;Continuous Tests aka Mighty Moose&lt;/a&gt; is now free! If you&amp;rsquo;ve been keeping up with the conference on twitter, you may have noticed the controversy that the Azure announcement caused. I also didn&amp;rsquo;t like the use of profanity in the keynote and more mentions of Steve Jobs, but that&amp;rsquo;s a small part. Aral had me in stitches with all the usability (or there lack of) issues found in our world. My criticism of those 2 things caused Aral to block me on Twitter - I guess some people have thin skin. Don&amp;rsquo;t let the Azure slip up take away from an excellent conference. Download all the presentations and watch them.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;continuous-tests-is-free&#34;&gt;Continuous Tests is Free!&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;Mighty Moose logo&#34; loading=&#34;lazy&#34; src=&#34;../images/mightymoose.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Last week I was lucky enough to present and attend the Norwegian Developer Conference in Oslo. This was a wonderful event with many excellent presentations and post conference get-togethers. The highlight of this conference for me was the announcement that &lt;a href=&#34;http://www.continuoustests.com&#34; title=&#34;Continuous Tests&#34;&gt;Continuous Tests aka Mighty Moose&lt;/a&gt; is now free! If you&amp;rsquo;ve been keeping up with the conference on twitter, you may have noticed the controversy that the Azure announcement caused. I also didn&amp;rsquo;t like the use of profanity in the keynote and more mentions of Steve Jobs, but that&amp;rsquo;s a small part. Aral had me in stitches with all the usability (or there lack of) issues found in our world. My criticism of those 2 things caused Aral to block me on Twitter - I guess some people have thin skin. Don&amp;rsquo;t let the Azure slip up take away from an excellent conference. Download all the presentations and watch them.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Branch-per-Feature</title>
       <link>/posts/2012-02-05-branch-per-feature/</link>
       <pubDate>Sun, 05 Feb 2012 22:38:00 +0000</pubDate>
       <guid>/posts/2012-02-05-branch-per-feature/</guid>
-      <description>&lt;h2 id=&#34;the-dymitruk-model&#34;&gt;The Dymitruk Model&lt;/h2&gt;&#xA;&lt;p&gt;Following the methodology defined below is the most effective way to leverage the power of Distributed Version Control Systems - specifically Git. This work is the result of an in depth analysis of Continuous Intergration and the notion of &lt;em&gt;responsible&lt;/em&gt; Continuous Delivery. The inherent risks that de facto CI and CD introduce are mitigated by what others now refer to as &amp;ldquo;The Dymitruk Model&amp;rdquo;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features-are-small&#34;&gt;Features are small&lt;/h2&gt;&#xA;&lt;p&gt;Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. This was a vicious circle as the feature would diverge further and further from other features or the mainline. Features should be as atomic as possible and your development process should abide by the &lt;a href=&#34;http://en.wikipedia.org/wiki/Open/closed_principle&#34;&gt;Open Close Principle&lt;/a&gt;. Features should be small.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;the-dymitruk-model&#34;&gt;The Dymitruk Model&lt;/h2&gt;
+&lt;p&gt;Following the methodology defined below is the most effective way to leverage the power of Distributed Version Control Systems - specifically Git. This work is the result of an in depth analysis of Continuous Intergration and the notion of &lt;em&gt;responsible&lt;/em&gt; Continuous Delivery. The inherent risks that de facto CI and CD introduce are mitigated by what others now refer to as &amp;ldquo;The Dymitruk Model&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;features-are-small&#34;&gt;Features are small&lt;/h2&gt;
+&lt;p&gt;Old-school branch-per-feature meant that branches were large and long living to avoid having to integrate because it was a pain. This was a vicious circle as the feature would diverge further and further from other features or the mainline. Features should be as atomic as possible and your development process should abide by the &lt;a href=&#34;http://en.wikipedia.org/wiki/Open/closed_principle&#34;&gt;Open Close Principle&lt;/a&gt;. Features should be small.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Fresh Start: Octopress Provides the Tooling for Blogging</title>
       <link>/posts/2012-01-25-a-fresh-start/</link>
       <pubDate>Wed, 25 Jan 2012 22:03:00 +0000</pubDate>
       <guid>/posts/2012-01-25-a-fresh-start/</guid>
-      <description>&lt;img src=&#34;../images/cat-edit.jpg&#34; /&gt;&#xA;&lt;p&gt;This is the first post using Octopress (I have been editing it though to get some things working). So far it&amp;rsquo;s awesome. I&amp;rsquo;ll have more to show soon. Look for:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Import old posts from adventuresinagile.blogspot.com&lt;/li&gt;&#xA;&lt;li&gt;&lt;del&gt;Customize the front page to include my password hasher.&lt;/del&gt; My password generator is &lt;a href=&#34;../password.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Articles and other demo stuff&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;img src=&#34;../images/cat-edit.jpg&#34; /&gt;
+&lt;p&gt;This is the first post using Octopress (I have been editing it though to get some things working). So far it&amp;rsquo;s awesome. I&amp;rsquo;ll have more to show soon. Look for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Import old posts from adventuresinagile.blogspot.com&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Customize the front page to include my password hasher.&lt;/del&gt; My password generator is &lt;a href=&#34;../password.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Articles and other demo stuff&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

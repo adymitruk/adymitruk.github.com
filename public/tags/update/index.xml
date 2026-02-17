@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Update on Adam Dymitruk</title>
     <link>/tags/update/</link>
     <description>Recent content in Update on Adam Dymitruk</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Feb 2026 08:17:44 +0000</lastBuildDate>
     <atom:link href="/tags/update/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,10 @@
       <link>/posts/2026-02-17-back-to-blogging/</link>
       <pubDate>Tue, 17 Feb 2026 08:17:44 +0000</pubDate>
       <guid>/posts/2026-02-17-back-to-blogging/</guid>
-      <description>&lt;p&gt;After a long hiatus, I&amp;rsquo;m starting to blog again.&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s been over a decade since my last post, and a lot has changed. The world has evolved, technology has leaped forward, and I&amp;rsquo;ve had countless experiences worth sharing. But some things remain constant — the value of writing down your thoughts, sharing knowledge, and connecting with others who are navigating similar challenges.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve migrated the blog to Hugo with the PaperMod theme. The old Octopress setup served me well, but it was time for something cleaner and more maintainable. You can still find the old version at dymitruk.com, but this new iteration at blog.dymitruk.com is where I&amp;rsquo;ll be posting going forward.&lt;/p&gt;</description>
+      <description>&lt;p&gt;After a long hiatus, I&amp;rsquo;m starting to blog again.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s been over a decade since my last post, and a lot has changed. The world has evolved, technology has leaped forward, and I&amp;rsquo;ve had countless experiences worth sharing. But some things remain constant — the value of writing down your thoughts, sharing knowledge, and connecting with others who are navigating similar challenges.&lt;/p&gt;
+&lt;h2 id=&#34;event-modelings-journey&#34;&gt;Event Modeling&amp;rsquo;s Journey&lt;/h2&gt;
+&lt;p&gt;Since introducing &lt;a href=&#34;https://eventmodeling.org/&#34;&gt;Event Modeling&lt;/a&gt; in 2018, I&amp;rsquo;ve watched it grow from a workshop technique into a global methodology used by teams worldwide. What started as a way to bridge communication between developers and domain experts has become a fundamental approach to designing information systems.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
